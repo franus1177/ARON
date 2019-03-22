@@ -1,0 +1,193 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using WebPortal.Business.Operations.InventoryRepository;
+@using WebPortal.Business.Entities.InventoryModels;
+@using WebPortal.Business.Entities.ViewModels;
+
+@{
+    IEnumerable<SelectListItem> CustomerList = new DropDownInventory().GetCustomerDDL(new CustomerDDL_VM());
+    IEnumerable<SelectListItem> FixtureList = new DropDownInventory().GetFixture(new Fixture_VM());
+    IEnumerable<SelectListItem> PartList = new DropDownInventory().GetPart(new Part_VM());
+}
+<style>
+    .chosen-container {
+        width: 100% !important;
+    }
+</style>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span>@Resource.Fixture</span>
+        <div class="pull-right" title="@Resource.Close"><i onclick="PurchaseOrder.SetForClose();" style="cursor:pointer;margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>
+    </div>
+    <div class="panel-body">
+        <form action="#" id="frm_FixtureAddUpdate">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Vendor:</label><asterisk></asterisk>
+                        <input type="text" id="txtCustomer" class="form-control" data-id="" data-label="" maxlength="200" placeholder="@Resource.Vendor" />
+                        <p class="help-block" id="lblErrortxtCustomer"></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.PONumber:</label><asterisk></asterisk>
+                        <input type="text" id="txtPONumber" disabled class="form-control text-right" maxlength="9" placeholder="@Resource.PONumber" />
+                        <p class="help-block" id="lblErrortxtPONumber"></p>
+                    </div>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">PO Submit Date:</label><asterisk></asterisk>
+                        <input type="text" id="txtPORecDate" class="form-control text-right" maxlength="11" placeholder="PO Rec Date" />
+                        <p class="help-block" id="lblErrortxtPORecDate"></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">PO Est. Ship Date:</label><asterisk></asterisk>
+                        <input type="text" id="txtPOEstShipDate" class="form-control text-right" maxlength="11" placeholder="PO Est. Ship Date" />
+                        <p class="help-block" id="lblErrortxtPOEstShipDate"></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">PO Act. Ship Date:</label>
+                        <input type="text" id="txtPOActShipDate" class="form-control text-right" maxlength="11" placeholder="PO Act. Ship Date" />
+                        <p class="help-block" id="lblErrortxtPOActShipDate"></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.POCompleted:</label>
+                        <input type="checkbox" id="chkPOCompleted" class="text-right form-control" style="width: 9%;height: 32px;" />
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <table id="tblFixturePartAddEdit" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+                        <thead>
+                            <tr role="row">
+                                <th class="col-lg-1 col-md-1"></th>
+                                <th class="col-lg-3 col-md-3">@Resource.Fixture</th>
+                                <th class="col-lg-1 col-md-1">Price</th>
+                                <th class="col-lg-1 col-md-1">@Resource.Quantity</th>
+                                <th class="col-lg-1 col-md-1">Price</th>
+                                <th class="col-lg-1 col-md-1">Commision</th>
+                                <th class="col-lg-1 col-md-1"></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td align="center">
+                                    <button type="button" class="btn btn-plus" onclick="PurchaseOrder.AddNewItem();">+</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <style>
+                        #tblFixturePartAddEdit.table tbody tr {
+                            counter-increment: rowNumber;
+                        }
+
+                            #tblFixturePartAddEdit.table tbody tr td:first-child::before {
+                                content: counter(rowNumber);
+                                min-width: 1em;
+                                margin-right: 0.5em;
+                            }
+                    </style>
+
+                    <script id="Grid_Data_Template_tblFixturePartAddEdit" type="text/x-jquery-tmpl">
+                        <tr FixtureID="${FixtureID}" data-id="${POFixtureID}" POFixtureID="${POFixtureID}">
+                            <td align="center"></td>
+                            <td>
+                                @Html.DropDownList("ddlFixtureName", FixtureList, Resource.Select, new { @class = "form-control FixtureNameRow", @selectedvalue = "${FixtureID}", @id = "ddlFixtureName${POFixtureID}" })
+                            </td>
+                            <td>
+                                <span class="FixturePrice pull-right">{{if FixtureCost > 0 }}$ ${FixtureCost}{{/if}}</span>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control Number Quantity text-center" value="${POFixtureQuantity}" maxlength="6" placeholder="@Resource.Quantity" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control Amount Price text-right" value="${FixturePrice}" maxlength="9" placeholder="Price" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control float Commision text-right" value="${FixtureCommision}" maxlength="3" min="1" max="100" placeholder="Commision" />
+                            </td>
+                            <td align="center" class="tdbtnminus">
+                                <button type="button" class="btn btn-plus" onclick="PurchaseOrder.RemoveItem(this);">-</button>
+                            </td>
+                        </tr>
+                    </script>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <table id="tblPOPartAddEdit" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+                        <caption>Additional Parts</caption>
+                        <thead>
+                            <tr role="row">
+                                <th></th>
+                                <th>@Resource.Part</th>
+                                <th>@Resource.Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td align="center">
+                                    <button type="button" class="btn btn-plus" onclick="PurchaseOrder.AddNewItemPart();">+</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <style>
+                        #tblPOPartAddEdit.table tbody tr {
+                            counter-increment: rowNumber;
+                        }
+
+                            #tblPOPartAddEdit.table tbody tr td:first-child::before {
+                                content: counter(rowNumber);
+                                min-width: 1em;
+                                margin-right: 0.5em;
+                            }
+                    </style>
+
+                    <script id="Grid_Data_Template_tblPOPartAddEdit" type="text/x-jquery-tmpl">
+                        <tr data-id="${PartID}" POPartID="${POPartID}" PO="${POID}">
+                            <td class="col-md-1 col-xs-1 center"></td>
+                            <td class="col-md-9 col-xs-9">
+                                @Html.DropDownList("ddlPart", PartList, Resource.Select, new { @class = "form-control PartRow", @selectedvalue = "${PartID}", @id = "PartRow${POFixtureID}" })
+                            </td>
+                            <td class="col-md-1 col-xs-1">
+                                <input type="text" id="txtPartQuantity${PartID}" value="${Quantity}" class="form-control Number text-right POPartQuantity" maxlength="6" placeholder="@Resource.Quantity" />
+                            </td>
+                            <td align="center">
+                                <button type="button" class="btn btn-plus" onclick="PurchaseOrder.RemoveItemPart(this);">-</button>
+                            </td>
+                        </tr>
+                    </script>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <input type="hidden" id="hf_POID" value="" />
+        <button type="button" onclick="PurchaseOrder.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" onclick="PurchaseOrder.ResetDataAddUpdate();" class="btn btn-warning btn-round"><i class="fa fa-history"></i></button>
+        <button type="button" title="@Resource.Close" onclick="PurchaseOrder.SetForClose();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Close</button>
+    </div>
+</div>

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="569bc39c16ce4a179e5065d0837e53c1" Name="Diagram1">
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AdditionalFrequencyCheckList" Width="1.5" PointX="15.75" PointY="87" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AssessmentParameter" Width="1.5" PointX="13.5" PointY="78" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AssessmentParameterLanguage" Width="1.5" PointX="15.75" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Attribute" Width="1.5" PointX="24.5" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AttributeLanguage" Width="1.5" PointX="26.75" PointY="67.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AuditLog" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Category" Width="1.5" PointX="11.25" PointY="76.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CategoryAttribute" Width="1.5" PointX="26.75" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CategoryLanguage" Width="1.5" PointX="13.5" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Certification" Width="1.5" PointX="19.5" PointY="79.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CertificationLanguage" Width="1.5" PointX="21.75" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CheckList" Width="1.5" PointX="13.5" PointY="92" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CheckListTask" Width="1.5" PointX="25.75" PointY="87.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CheckListTaskDeviationType" Width="1.5" PointX="31" PointY="87" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ChecklistTaskGroup" Width="1.5" PointX="21.25" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ChecklistTaskGroupLanguage" Width="1.5" PointX="23.5" PointY="60.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CheckListTaskLanguage" Width="1.5" PointX="28" PointY="87.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Contract" Width="1.5" PointX="11.25" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ContractCategory" Width="1.5" PointX="22.5" PointY="107.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ContractLocation" Width="1.5" PointX="24.75" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ContractScheduledLocation" Width="1.5" PointX="30" PointY="102.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ControllerTagging" Width="1.5" PointX="8.25" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CountryHoliday" Width="1.5" PointX="5.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CountryHolidayName" Width="1.5" PointX="8" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Course" Width="1.5" PointX="10.5" PointY="87" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseAssessmentParameter" Width="1.5" PointX="15.75" PointY="84" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseDocument" Width="1.5" PointX="12.75" PointY="84.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseFeedbackParameter" Width="1.5" PointX="18.75" PointY="83" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseLanguage" Width="1.5" PointX="12.75" PointY="81" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseType" Width="1.5" PointX="8.25" PointY="88.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseTypeLanguage" Width="1.5" PointX="10.5" PointY="73" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Customer" Width="1.5" PointX="8.25" PointY="92" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerAddress" Width="1.5" PointX="10.5" PointY="91.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerContact" Width="1.5" PointX="16.5" PointY="94.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerIRemark" Width="1.5" PointX="13.5" PointY="87.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerLanguage" Width="1.5" PointX="10.5" PointY="119.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerLocation" Width="1.5" PointX="18.75" PointY="96.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerLocationBarredInspection" Width="1.5" PointX="21" PointY="90.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerLocationHoliday" Width="1.5" PointX="21" PointY="87.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerLocationHolidayName" Width="1.5" PointX="23.25" PointY="87.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerModule" Width="1.5" PointX="10.5" PointY="121.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerModuleConfiguration" Width="1.5" PointX="12.75" PointY="121.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerServiceLine" Width="1.5" PointX="10.5" PointY="124.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerServiceLineConfiguration" Width="1.5" PointX="12.75" PointY="124.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CustomerWeeklyOff" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Department" Width="1.5" PointX="0.75" PointY="106" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DepartmentLanguage" Width="1.5" PointX="3" PointY="105.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Designation" Width="1.5" PointX="3.75" PointY="93.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DesignationLanguage" Width="1.5" PointX="6" PointY="76.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Deviation" Width="1.5" PointX="30" PointY="94.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationLocationPhoto" Width="1.5" PointX="32.25" PointY="95.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationLocationPhotoElement" Width="1.5" PointX="34.5" PointY="95.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationRepairComponent" Width="1.5" PointX="35.25" PointY="98.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationResolutionRemarksPhoto" Width="1.5" PointX="32.25" PointY="110.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationType" Width="1.5" PointX="23.5" PointY="74" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationTypeDepartment" Width="1.5" PointX="6" PointY="107" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationTypeLanguage" Width="1.5" PointX="25.75" PointY="70.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationTypeResolution" Width="1.5" PointX="37.25" PointY="94.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationTypeResolutionLanguage" Width="1.5" PointX="39.5" PointY="95" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Document" Width="1.5" PointX="8.25" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DocumentCategory" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DocumentCategoryLanguage" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DocumentMapping" Width="1.5" PointX="10.5" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DocumentType" Width="1.5" PointX="6" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DocumentTypeLanguage" Width="1.5" PointX="8.25" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Drill" Width="1.5" PointX="16.75" PointY="101.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillActionType" Width="1.5" PointX="18" PointY="130.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillActionTypeLanguage" Width="1.5" PointX="20.25" PointY="144.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillCheckList" Width="1.5" PointX="15.75" PointY="133.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillCheckListTask" Width="1.5" PointX="18" PointY="132.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillCheckListTaskLanguage" Width="1.5" PointX="20.25" PointY="141.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillData" Width="1.5" PointX="20.25" PointY="111" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillProposal" Width="1.5" PointX="22" PointY="103.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillSetup" Width="1.5" PointX="5.25" PointY="109.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillStakeholder" Width="1.5" PointX="3" PointY="110.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillStakeholderLanguage" Width="1.5" PointX="5.25" PointY="115.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillType" Width="1.5" PointX="14.5" PointY="127.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillTypeLanguage" Width="1.5" PointX="16.75" PointY="137.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Employee" Width="1.5" PointX="9" PointY="102.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.EndUser" Width="1.5" PointX="6" PointY="96.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.EndUserModule" Width="1.5" PointX="8.25" PointY="117.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FeedbackParameter" Width="1.5" PointX="16.5" PointY="78" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FeedbackParameterLanguage" Width="1.5" PointX="18.75" PointY="76" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FeedbackParameterValue" Width="1.5" PointX="23.25" PointY="126.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Folder" Width="1.5" PointX="3.75" PointY="87.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FolderFile" Width="1.5" PointX="6" PointY="83.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASCheckList" Width="1.5" PointX="17.5" PointY="126.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASCheckListTask" Width="1.5" PointX="22.75" PointY="122.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASCheckListTaskLanguage" Width="1.5" PointX="25" PointY="123.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASInspection" Width="1.5" PointX="19.75" PointY="100.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASInspectionTask" Width="1.5" PointX="25" PointY="104.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASRiskSetting" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.GetOnlySPsTable" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Incident" Width="1.5" PointX="11.25" PointY="107" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCategory" Width="1.5" PointX="9" PointY="114.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCategoryLanguage" Width="1.5" PointX="11.25" PointY="136.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCauseType" Width="1.5" PointX="20.25" PointY="132.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCauseTypeLanguage" Width="1.5" PointX="22.5" PointY="141" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCheckList" Width="1.5" PointX="22.25" PointY="66.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCheckListTask" Width="1.5" PointX="30.5" PointY="113.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCheckListTaskLanguage" Width="1.5" PointX="32.75" PointY="114.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentImpactType" Width="1.5" PointX="20.25" PointY="135.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentImpactTypeLanguage" Width="1.5" PointX="22.5" PointY="135" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentInspection" Width="1.5" PointX="24.5" PointY="95.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentInspectionTask" Width="1.5" PointX="32.75" PointY="100.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentStatu" Width="1.5" PointX="9" PointY="127.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentStatusLanguage" Width="1.5" PointX="11.25" PointY="133.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentType" Width="1.5" PointX="9" PointY="129.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentTypeLanguage" Width="1.5" PointX="11.25" PointY="130.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.InformationCode" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Inspection" Width="1.5" PointX="18.75" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.InspectionCheckList" Width="1.5" PointX="24" PointY="84" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Location" Width="1.5" PointX="13.5" PointY="97.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.LocationRiskLevel" Width="1.5" PointX="15.75" PointY="98.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.MailLog" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.MailType" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Menu" Width="1.5" PointX="9" PointY="83.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.NotInUseReason" Width="1.5" PointX="19.5" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.NotInUseReasonLanguage" Width="1.5" PointX="21.75" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Object" Width="1.5" PointX="19.5" PointY="121" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectAttribute" Width="1.5" PointX="33.75" PointY="85.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectDeviationPhoto" Width="1.5" PointX="36.25" PointY="91" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectDeviationPhotoElement" Width="1.5" PointX="38.5" PointY="90.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectInstance" Width="1.5" PointX="21.75" PointY="92.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectInstanceInspection" Width="1.5" PointX="31" PointY="90.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectInstanceMake" Width="1.5" PointX="19.5" PointY="124.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectInstancePhotoElement" Width="1.5" PointX="28" PointY="90.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectInstanceTask" Width="1.5" PointX="33.25" PointY="89.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectLanguage" Width="1.5" PointX="21.75" PointY="138.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ObjectRepairComponent" Width="1.5" PointX="39.5" PointY="114" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.PublishedURL" Width="1.5" PointX="3.75" PointY="96.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.RepairComponent" Width="1.5" PointX="37.25" PointY="106.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.RepairComponentLanguage" Width="1.5" PointX="39.5" PointY="110" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ResolutionInspectionDeviation" Width="1.5" PointX="36.25" PointY="87.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Screen" Width="1.5" PointX="14.25" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ScreenAction" Width="1.5" PointX="24.5" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ScreenTable" Width="1.5" PointX="16.5" PointY="74" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Squad" Width="1.5" PointX="9" PointY="133.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.TimeZone" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.Training" Width="1.5" PointX="21.75" PointY="82" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.TrainingAssessment" Width="1.5" PointX="25.5" PointY="112.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.TrainingEnrolment" Width="1.5" PointX="14.25" PointY="108.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.TrainingFeedback" Width="1.5" PointX="25.5" PointY="116" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.UOM" Width="1.5" PointX="23.5" PointY="70.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.UOMLanguage" Width="1.5" PointX="25.75" PointY="73.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.URLUsageType" Width="1.5" PointX="1.5" PointY="96.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.UserRole" Width="1.5" PointX="11.25" PointY="95.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.UserRoleScreen" Width="1.5" PointX="16.5" PointY="90.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.UserRoleScreenAction" Width="1.5" PointX="26.75" PointY="95.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkCheckList" Width="1.5" PointX="9" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkCheckListTask" Width="1.5" PointX="20.25" PointY="126.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkCheckListTaskLanguage" Width="1.5" PointX="22.5" PointY="130" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkingShift" Width="1.5" PointX="12" PointY="128" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkInspection" Width="1.5" PointX="11.25" PointY="103.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkInspectionTask" Width="1.5" PointX="22.5" PointY="111.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkPermit" Width="1.5" PointX="17.25" PointY="108.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkPermitType" Width="1.5" PointX="15" PointY="122" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkPermitTypeLanguage" Width="1.5" PointX="17.25" PointY="121.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkType" Width="1.5" PointX="6.75" PointY="80.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkTypeLanguage" Width="1.5" PointX="9" PointY="77" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AuditPreImage" Width="1.5" PointX="8" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ControllerSpecialization" Width="1.5" PointX="14.25" PointY="104.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DesignationCourse" Width="1.5" PointX="15.75" PointY="80.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationResolutionRemarksPhotoElement" Width="1.5" PointX="35.5" PointY="102.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationTypeResolutionRepairComponent" Width="1.5" PointX="39.5" PointY="97.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillDataPhoto" Width="1.5" PointX="25.5" PointY="118.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillProposalStatu" Width="1.5" PointX="27.25" PointY="107.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.EmployeeShift" Width="1.5" PointX="14.25" PointY="114.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.EmployeeSquad" Width="1.5" PointX="11.25" PointY="115.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASInspectionPhoto" Width="1.5" PointX="30.25" PointY="106.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentAttachment" Width="1.5" PointX="16.5" PointY="116.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCause" Width="1.5" PointX="22.5" PointY="115.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentDespatch" Width="1.5" PointX="13.5" PointY="118.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentImpact" Width="1.5" PointX="22.5" PointY="118.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentInspectionPhoto" Width="1.5" PointX="38" PointY="101.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentLocation" Width="1.5" PointX="24.75" PointY="110.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentObjectInstance" Width="1.5" PointX="27" PointY="101.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.InformationValue" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.TrainingTrainer" Width="1.5" PointX="20.25" PointY="108" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.UserLocation" Width="1.5" PointX="18.75" PointY="92.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.AssessmentParameterView" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CategoryView" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CertificationView" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.ChecklistTaskGroupView" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseTypeView" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.CourseView" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DepartmentView" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DesignationView" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DeviationTypeView" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillActionTypeView" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillCheckListTaskView" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillStakeholderView" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.DrillTypeView" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.EmployeeView" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.EndUserView" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FeedbackParameterView" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.FRASCheckListTaskView" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.GetFileinfo_View" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.IncidentCheckListTaskView" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebPortalEntitiesModel.WorkPermitTypeView" Width="1.5" PointX="16.75" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="WebPortalEntitiesModel.AdditionalFrequencyCheckList_FK_AdditionalCheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.AdditionalFrequencyCheckList_FK_CheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.AssessmentParameterLanguage_FK_AssessmentParameterID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseAssessmentParameter_FK_AssessmentParameterID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingAssessment_FK_AssessmentParameterID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.AttributeLanguage_FK_AttributeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CategoryAttribute_FK_AttributeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectAttribute_FK_AttributeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.AuditPreImage_FK_AuditLogID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Category_FK_ParentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CategoryAttribute_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CategoryLanguage_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckList_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractCategory_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractScheduledLocation_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ControllerSpecialization_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationType_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Object_FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CategoryAttribute_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CertificationLanguage_FK_CertificationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Training_FK_CertificationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckList_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_CheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Inspection_FK_CheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.InspectionCheckList_FK_CheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_BoolDeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_ChecklistTaskGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_LessValueDeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_MoreValueDeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTaskDeviationType_FK_CheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTaskLanguage_FK_CheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_CheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceTask_FK_CheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTaskDeviationType_FK_DeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CheckListTask_FK_DeviationGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ChecklistTaskGroupLanguage_FK_ChecklistTaskGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillCheckListTask_FK_CheckListTaskGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASCheckListTask_FK_CheckListTaskGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCheckListTask_FK_ChecklistTaskGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkCheckListTask_FK_ChecklistTaskGroupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Contract_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Contract_FK_SalesPersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractCategory_FK_ContractID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractLocation_FK_ContractID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractLocation_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractScheduledLocation_FK_ContractID_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractScheduledLocation_FK_ScheduledByUserID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractScheduledLocation_FK_ScheduledLocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ControllerTagging_FK_ControllerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerHolidayName_FK_CountryCode_HolidayDate" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Course_FK_CourseTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Course_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseAssessmentParameter_FK_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseDocument_FK_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseFeedbackParameter_FK_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseLanguage_FK_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DesignationCourse_FK_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Training_FK_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseFeedbackParameter_FK_FeedbackParameterID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CourseTypeLanguage_FK_CourseTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Customer_FK_AccountManagerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Customer_FK_Logo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerAddress_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerContact_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerIRemarks_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerLanguage_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerLocation_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerModule_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerServiceLine_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Employee_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Location_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Training_FK_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerContact_FK_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerIRemarks_FK_CustomerSignatureImage" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Inspection_PK_CustomerIRemarksID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerLocation_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerLocationBarredInspection_FK_CustomerLocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerLocationHoliday_FK_CustomerLocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerLocationHolidayName_FK_CustomerLocationID_HolidayDate" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerModuleConfiguration_FK_CustomerID_ModuleCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.CustomerServiceLineConfiguration_FK_CustomerID_ServiceLineCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DepartmentLanguage_FK_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeDepartment_FK_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillStakeholder_FK_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Employee_FK_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EndUser_FK_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DesignationCourse_FK_DesignationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DesignationLanguage_FK_DesignationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Employee_FK_DesignationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EndUser_FK_DesignationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_ControllerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_DeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_InspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_ObjectInstanceID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Deviation_FK_ResolutionControllerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationLocationPhoto_FK_DeviationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationRepairComponent_FK_DeviationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationResolutionRemarksPhoto_FK_DeviationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationResolutionRemarksPhotoElement_FK_DeviationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectDeviationPhoto_FK_DeviationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ResolutionInspectionDeviation_FK_DeviationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationLocationPhotoElement_FK_DeviationID_PhotoDateTime" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationLocationPhotoElement_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationLocationPhotoElement_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationRepairComponent_FK_RepairComponentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationResolutionRemarksPhotoElement_FK_DeviationID_PhotoDateTime" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeDepartment_FK_DeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeLanguage_FK_DeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeResolutionLanguage_FK_DeviationTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeResolutionLanguage_FK_DeviationTypeResolutionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeResolutionRepairComponent_FK_DeviationTypeResolutionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Document_FK_DocumentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Document_FK_DocumentTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Document_FK_FileID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DocumentMapping_FK_DocumentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DocumentCategory_FK_ParentDocumentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DocumentCategoryLanguage_FK_DocumentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DocumentTypeLanguage_FK_DocumentTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Drill_FK_ClosedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Drill_FK_DrillTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Drill_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Drill_FK_OwnerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Drill_FK_ResolutionBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillProposal_FK_DrillID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillSetup_FK_DrillID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillActionTypeLanguage_FK_DrillActionTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_DrillActionTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillCheckList_FK_DrillTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillCheckListTask_FK_DrillCheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillCheckListTaskLanguage_FK_DrillCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_DrillCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_ActionBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_ActualPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_ActualSmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_ClosedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_DrillSetupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_ResolvedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillData_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillDataPhoto_FK_DrillDataID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillProposal_FK_DrillSetupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillProposalStatus_FK_DrillProposalID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillProposalStatus_FK_ParentDrillProposalID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillProposalStatus_FK_DrillSetupID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillSetup_FK_DrillStakeholderID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillSetup_FK_EmployeeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillStakeholderLanguage_FK_DrillStakeholderID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillTypeLanguage_FK_DrillTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Employee_FK_EndUserID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Employee_FK_ReportingEmployeeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EmployeeShift_FK_EmployeeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EmployeeSquad_FK_EmployeeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspection_FK_ClosedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspection_FK_ResolvedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionTask_FK_ClosedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionTask_FK_ResolvedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Incident_FK_IncidentOwner" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_ActionBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_ClosedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_ResolvedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingEnrolment_FK_TraineeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingEnrolment_FK_TrainerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingTrainer_FK_EmployeeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkPermit_FK_ApprovedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkPermit_FK_CancelledBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ControllerSpecialization_FK_ControllerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EndUser_FK_ActivationURLID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EndUser_FK_ResetPasswordURLID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EndUserModule_FK_EndUserID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspection_FK_ExecutedByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspection_FK_ExecutedByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Inspection_FK_ControllerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceInspection_FK_ControllerID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Training_FK_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserLocation_FK_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkInspection_FK_ExecutedByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkPermit_FK_WPRecordedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FeedbackParameterLanguage_FK_FeedbackParameterID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FeedbackParameterValue_FK_FeedbackParameterID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingFeedback_FK_FeedbackParameterValueID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FolderFile_FK_FolderID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationResolutionRemarksPhotoElement_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationResolutionRemarksPhotoElement_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillDataPhoto_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DrillDataPhoto_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionPhoto_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionPhoto_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentAttachment_FK_FileID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionPhoto_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionPhoto_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_InspectionValuePhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_InspectionValueSmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectDeviationPhotoElement_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectDeviationPhotoElement_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstancePhotoElement_FK_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstancePhotoElement_FK_SmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceTask_FK_InspectionValuePhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceTask_FK_InspectionValueSmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkInspectionTask_FK_InspectionValuePhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkInspectionTask_FK_InspectionValueSmallPhoto" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASCheckListTask_FK_FRASCheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspection_FK_FRASCheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASCheckListTaskLanguage_FK_FRASCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionTask_FK_CheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspection_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionTask_FK_ObjectInstanceInspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionPhoto_FK_FRASInspectionTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Incident_FK_IncidentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Incident_FK_IncidentStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Incident_FK_IncidentTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentAttachment_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCause_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentDespatch_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentImpact_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspection_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentLocation_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentObjectInstance_FK_IncidentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCategory_FK_ParentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCategoryLanguage_FK_IncidentCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCause_FK_IncidentCauseTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCauseTypeLanguage_FK_IncidentCauseTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCheckList_FK_IncidentTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCheckListTask_FK_IncidentCheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspection_FK_IncidentChecklistID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCheckListTask_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentCheckListTaskLanguage_FK_IncidentCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_IncidentsCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentImpact_FK_IncidentImpactTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentImpactTypeLanguage_FK_IncidentImpactTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionTask_FK_IncidentInspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentInspectionPhoto_FK_IncidentInspectionTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentStatusLanguage_FK_IncidentStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentTypeLanguage_FK_IncidentTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.InformationValue_FK_InfoCd" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Inspection_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.InspectionCheckList_FK_InspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceInspection_FK_InspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ResolutionInspectionDeviation_FK_InspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentLocation_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Location_FK_ParentLocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.LocationRiskLevel_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstance_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserLocation_FK_LocationID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.MailLog_FK_MailType" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Menu_FK_ParentMenuCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Screen_FK_MenuCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.NotInUseReasonLanguage_FK_NotInUseReasonID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstance_FK_NotInUseReasonID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeResolutionRepairComponent_FK_ObjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectAttribute_FK_ObjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstance_FK_ObjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectLanguage_FK_ObjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectRepairComponent_FK_ObjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectDeviationPhoto_FK_ObjectInstanceID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectDeviationPhotoElement_FK_ObjectInstanceID_PhotoDateTime" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.IncidentObjectInstance_FK_ObjectInstanceID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstance_FK_Make" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstance_FK_PreviousObjectInstanceID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceInspection_FK_ObjectInstanceID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstancePhotoElement_FK_ObjectInstanceID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectInstanceTask_FK_ObjectInstanceInspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ObjectRepairComponent_FK_RepairComponentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.PublishedURL_FK_URLUsageType" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationTypeResolutionRepairComponent_FK_RepairComponentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.RepairComponent_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.RepairComponentLanguage_FK_RepairComponentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ScreenAction_FK_ScreenID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ScreenTable_FK_ScreenID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleScreen_FK_ScreenID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleScreenAction_FK_ScreenID_ActionCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EmployeeSquad_FK_SquadCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingEnrolment_FK_TrainingID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingTrainer_FK_TrainingID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingAssessment_FK_TrainingEnrolmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.TrainingFeedback_FK_TrainingEnrolmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UOMLanguage_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkCheckListTask_FK_UOMID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleScreen_FK_UserRoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleScreenAction_FK_UserRoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleScreenAction_FK_UserRoleID_ScreenID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkCheckList_FK_WorkTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkCheckListTask_FK_WorkCheckListID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkInspection_FK_WorkChecklistID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkCheckListTaskLanguage_FK_WorkCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkInspectionTask_FK_WorkCheckListTaskID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.EmployeeShift_FK_ShiftCode" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkInspectionTask_FK_WorkInspectionID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkPermit_FK_WorkPermitTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkPermitTypeLanguage_FK_WorkPermitTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.WorkTypeLanguage_FK_WorkTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ContractInspection" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.ControllerTaggingLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.DeviationDeviationTypeResolution" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.FRASInspectionTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserRoleUser" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.UserLeafLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="WebPortalEntitiesModel.Contract_FK_ResponsiblePersonID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

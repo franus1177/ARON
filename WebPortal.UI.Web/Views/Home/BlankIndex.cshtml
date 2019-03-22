@@ -1,0 +1,30 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    ViewBag.Title = Resource.Home;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+}
+
+<link href="~/assets/css/AdminLTE.min.css?@jq" rel="stylesheet" />
+<!-- Chart code -->
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <!-- breadcrumbs-fixed -->
+    <div class="col-xs-5 col-sm-5">
+        <ul class="breadcrumb">
+            <li class="active">
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+@section Scripts{
+    <!-- inline scripts related to this page -->
+}

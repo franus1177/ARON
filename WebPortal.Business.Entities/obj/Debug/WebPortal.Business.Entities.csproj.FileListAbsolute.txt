@@ -1,0 +1,14 @@
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\WebPortal.Business.Entities.dll.config
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\WebPortal.Business.Entities.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\WebPortal.Business.Entities.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\EntityFramework.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\EntityFrameworkExtras.EF6.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\Newtonsoft.Json.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\EntityFramework.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\EntityFrameworkExtras.EF6.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\bin\Debug\Newtonsoft.Json.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\obj\Debug\WebPortal.Business.Entities.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Entities\obj\Debug\WebPortal.Business.Entities.pdb

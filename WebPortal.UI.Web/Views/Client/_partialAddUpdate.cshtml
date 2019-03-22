@@ -1,0 +1,247 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+<style type="text/css">
+    .ace-file-input .ace-file-container:before {
+        background-color: #fff !important;
+    }
+</style>
+
+<div  id="widget-container-col-10" class="col-sm-12 widget-container-col ui-sortable">
+    <div class="widget-box ui-sortable-handle" id="widget-box-10">
+        <div class="widget-header widget-header-small">
+            <div class="pull-right" title="Close">
+                <i onclick="customer.SetForClose();" style="cursor:pointer;margin-top:3px;margin-right: 6px;color: black;" class="fa fa-window-close fa-2x"></i>
+            </div>
+            <div class="widget-toolbar no-border pull-left">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active">
+                        <a data-toggle="tab" href="#tab1" aria-expanded="true">GeneralInformation</a>
+                    </li>
+                    @*<li id="tabAddress">
+                            <a data-toggle="tab" href="#tab2" aria-expanded="false">AddressInfomation</a>
+                        </li>
+                        <li id="tabContact">
+                            <a data-toggle="tab" href="#tab3" aria-expanded="false">ContactInformation</a>
+                        </li>
+                        <li id="tabHoliday">
+                            <a data-toggle="tab" href="#tab4" aria-expanded="false">Holiday</a>
+                        </li>
+                        <li id="tabWeeklyOff">
+                            <a data-toggle="tab" href="#tab5" aria-expanded="false">WeeklyOff</a>
+                        </li>*@
+                </ul>
+            </div>
+        </div>
+        <div class="widget-body">
+            <div class="widget-main padding-6">
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="panel-body" style="padding: 8px 2px;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Customer Name</label><asterisk></asterisk>
+                                                <input type="text" id="txtCustomerName" autofocus class="form-control" maxlength="50" placeholder="CustomerName" />
+                                                <p class="help-block"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Contact No.</label>
+                                                <input type="text" id="txtContactNo" class="form-control" maxlength="15" placeholder="Contact No." />
+                                                <p class="help-block"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">DOB</label>
+                                                <input type="text" id="txtContactDOB" class="form-control" maxlength="11" placeholder="dd-mm-yyyy" />
+                                                <p class="help-block"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Anniversary</label>
+                                                <input type="text" id="txtAnniversary" class="form-control" maxlength="11" placeholder="Anniversary dd-mm-yyyy" />
+                                                <p class="help-block"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Address</label>
+                                                <textarea type="text" id="txtLegalEntityName" class="form-control" maxlength="50" placeholder="LegalEntityName" rows="5"></textarea>
+                                                <p class="help-block"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <input type="hidden" id="HCustomerLocation" />
+                                    <button type="button" id="btn_Save_Data" onclick="customer.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
+                                    <button type="button" id="btn_Reset_Data" onclick="customer.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<div id="tab2" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-7 col-xs-12">
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGridCustomerAddress" role="grid" aria-describedby="tblGridCustomerAddress_info">
+                                        <template>
+                                            AddressInfomation
+                                        </template>
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="col-lg-2 col-md-2">AddressType</th>
+                                                <th class="col-lg-5 col-md-5">Address</th>
+                                                <th class="col-lg-2 col-md-2">PrimaryAddress</th>
+                                                <th class="col-md-1 col-xs-1 DeleteColumn sorting_disabled"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                    <script id="Grid_Data_Template_tblGridCustomerAddress" type="text/x-jquery-tmpl">
+                                        <tr data-id="${CustomerID}">
+                                            <td style="cursor:pointer;" class="HasUpdatetds" onclick="javascript:customerAddress.GetDataByID(xhr_getData_For_Edit, '${CustomerID+'_'+AddressType}');">
+                                                <a title="Edit">${AddressType}</a>
+                                            </td>
+                                            <td>${Address}</td>
+                                            <td align="center">
+                                                {{if IsPrimaryAddress === true}}
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                {{/if}}
+                                            </td>
+                                            <td align="center" class="DeleteColumn" title="Delete">
+                                                <span class="fa fa-trash fa-2x DeleteIcon" onclick="customerAddress.Delete('${CustomerID+'_'+AddressType}','')"></span>
+                                            </td>
+                                        </tr>
+                                    </script>
+                                </div>
+                                <div id="Master_Form_CustomerAddress" class="col-lg-5 col-md-5 col-xs-12">
+                                    @Html.Partial("~/Views/CustomerAddress/_partialAddressAddUpdate.cshtml")
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab3" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-7 col-xs-12">
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGridCustomerContact" role="grid" aria-describedby="tblGridContact_info">
+                                        <template>
+                                            ContactInformation
+                                        </template>
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="col-lg-5 col-md-5">ContactName</th>
+                                                <th class="col-lg-3 col-md-3">Email</th>
+                                                <th class="col-lg-2 col-md-2">Mobile</th>
+                                                <th class="col-lg-1 col-md-1 sorting_disabled"></th>
+                                                <th class="col-md-1 col-xs-1 DeleteColumn sorting_disabled"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                    <script id="Grid_Data_Template_tblGridCustomerContact" type="text/x-jquery-tmpl">
+                                        <tr data-id="${CustomerID}">
+                                            <td style="cursor:pointer;" class="HasUpdatetds" onclick="javascript:customerContact.GetDataByID(xhr_getData_For_Edit, '${CustomerID+'_'+ContactName}');">
+                                                <a title="Edit">${ContactName}</a>
+                                            </td>
+                                            <td>${Email}</td>
+                                            <td align="center">${Mobile}</td>
+                                            <td align="center">
+                                                {{if UserID != null}}
+                                                <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+                                                {{/if}}
+                                            </td>
+                                            <td align="center" class="DeleteColumn" title="Delete">
+                                                <span class="fa fa-trash fa-2x DeleteIcon" onclick="customerContact.Delete('${CustomerID+'_'+ContactName}','')"></span>
+                                            </td>
+                                        </tr>
+                                    </script>
+                                </div>
+                                <div id="Master_Form_CustomerContact" class="col-lg-5 col-md-5 col-xs-12">
+                                    @Html.Partial("~/Views/CustomerContact/_partialContactAddUpdate.cshtml")
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab4" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-7 col-xs-12">
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblCustomerHolidayGrid" role="grid">
+                                        <template>
+                                            HolidayCalendar
+                                        </template>
+                                        <thead>
+                                            <tr role="row">
+                                                <th>Location</th>
+                                                <th>Date</th>
+                                                <th>HolidayName</th>
+                                                <th class="DeleteColumn sorting_disabled"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                    <script id="Grid_Data_Template_tblCustomerHolidayGrid" type="text/x-jquery-tmpl">
+                                        <tr id="tr${CustomerLocationID}" data-id="${CustomerLocationID}">
+                                            <td>${LocationName}</td>
+                                            <td>${HolidayDateCustom}</td>
+                                            <td>${HolidayName}</td>
+                                            <td align="center" class="DeleteColumn" title="Delete">
+                                                <span class="fa fa-trash fa-2x DeleteIcon" onclick='customerHoliday.Delete("${CustomerLocationID}","${HolidayDateCustom}","${HolidayName}")'></span>
+                                            </td>
+                                        </tr>
+                                    </script>
+                                </div>
+                                <div id="Master_Form_CustomerHoliday" class="col-lg-5 col-md-5 col-xs-12">
+                                    @Html.Partial("~/Views/CustomerLocationHoliday/_partialAddUpdate.cshtml")
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab5" class="tab-pane">
+                            <div class="row">
+                                <div class="col-md-7 col-xs-12">
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblCustomerWeeklyOffGrid" role="grid">
+                                        <template>
+                                            WeeklyOff
+                                        </template>
+                                        <thead>
+                                            <tr role="row">
+                                                <th>Location</th>
+                                                <th>WeeklyOff</th>
+                                                <th class="DeleteColumn sorting_disabled"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                    <script id="Grid_Data_Template_tblCustomerWeeklyOffGrid" type="text/x-jquery-tmpl">
+                                        <tr id="tr${LocationID}" data-id="${LocationID}">
+                                            <td>${LocationName}</td>
+                                            <td>${DayName}</td>
+                                            <td align="center" class="DeleteColumn" title="Delete">
+                                                <span class="fa fa-trash fa-2x DeleteIcon" onclick='customerWeeklyoff.Delete("${LocationID}","${DayName}")'></span>
+                                            </td>
+                                        </tr>
+                                    </script>
+                                </div>
+                                <div id="Master_Form_CustomerWeeklyOff" class="col-lg-5 col-md-5 col-xs-12">
+                                    @Html.Partial("~/Views/CustomerWeeklyOff/_partialWeeklyOffAddUpdate.cshtml")
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

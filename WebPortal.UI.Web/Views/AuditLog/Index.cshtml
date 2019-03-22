@@ -1,0 +1,165 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+
+@using System.Web.Configuration;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    ViewBag.Title = Resource.AuditLogReport;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+}
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+        </li>
+        <li class="active"><a href="/AuditLog/Index/@ViewBag.EncryptScreenID" class="active">@Resource.AuditLogReport</a></li>
+    </ul>
+    <div class="pull-right" style="padding-right: 12px;">
+        <span id="divExport" style="display:none;" class="dt-buttons btn-overlap btn-group">
+            <a id="btnExportToExcel" href="#" style="margin-right: 9px !important;color:#393939;" class="dt-button buttons-excel" tabindex="0" aria-controls="dynamic-table" onclick="ExportToExcelGrid('#tblGrid','excel');">
+                <i style="font-size: 20px !important;color: green;" class="fa fa-file-excel-o bigger-110" title="@Resource.ExportToExcel"></i> <span class="hidden">@Resource.ExportToExcel</span>
+            </a>
+        </span>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div id="divGridMaster" class="col-md-12 col-xs-12">
+            <form id="frm_AuditLog" autocomplete="off">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resource.EntityName</label>
+                                <select id="ddlScreen" class="form-control"></select>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resource.User</label>
+                                <select id="ddlUser" class="form-control"></select>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resource.Module</label>
+                                <select id="ddlModule" class="form-control"></select>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resource.EntityName</label>
+                                <input type="text" id="txtObject" class="form-control" placeholder="@Resource.EntityName" data-id="" data-label="" />
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resource.Action</label>
+                                <select id="ddlOperation" class="form-control">
+                                    <option value="">@Resource.All</option>
+                                    <option value="I">@Resource.Add</option>
+                                    <option value="U">@Resource.Edit</option>
+                                    <option value="D">@Resource.Delete</option>
+                                </select>
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-xs-12" style="padding-bottom: 5px;">
+                            <label class="control-label">@Resource.From</label>
+                            <div class="input-daterange input-group">
+                                <input type="text" class="input-sm form-control" name="start" id="txtStartSearch" placeholder="@Resource.From" maxlength="11">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="input-sm form-control" name="end" id="txtEndSearch" placeholder="@Resource.To" maxlength="11">
+                            </div>
+                            <p id="lblErrortxtStartSearch" class="help-block" style="display: none;"></p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resource.AccessPoint</label>
+                                <input type="text" id="txtAccessPoint" class="form-control" placeholder="@Resource.AccessPoint" data-id="" data-label="" />
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6">
+                            <button type="button" for="Grid" title="@Resource.View" onclick="AuditLog.BindGrid();" class="btn btn-success btn-round"><i class="fa fa-check-square-o"></i>&nbsp;@Resource.View</button>
+                            <button type="button" title="@Resource.Reset" class="btn btn-warning btn-round " onclick="AuditLog.ResetData()"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+                        </div>
+                        <div class="form-group col-md-1 col-xs-1 pull-right " style="margin-right: 23px;display:none;">
+                            <button type="button" title="Report" for="Grid" onclick="AuditLog.RedirectDeviationReport();" class="btn btn-success btn-round "><i class="fa fa-list-alt"></i>&nbsp;Report</button>
+                        </div>
+                        <div class="form-group col-md-1 col-xs-1 pull-right" style="margin-right :-18px;display:none;">
+                            <select id="ddlDownload" class="form-control">
+                                <option value="PDF" selected>@Resource.Pdf</option>
+                                <option value="Word">@Resource.Word</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="form-group col-md-12 col-xs-12">
+                    <div id="dtMaster_Instance_wrapper" class="form-inline dt-bootstrap no-footer" style="height: 500px;  overflow-x: scroll;">
+                        <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGrid" role="grid">
+                            <thead>
+                                <template>
+                                    @Resource.AuditLogReport
+                                </template>
+                                <tr>
+                                <tr role="row">
+                                    <th class="col-md-2 col-xs-2">@Resource.EntityName</th>
+                                    <th class="col-md-2 col-xs-2">@Resource.Action</th>
+                                    <th class="col-md-2 col-xs-2">@Resource.EntityType</th>
+                                    <th class="col-md-2 col-xs-2">@Resource.User</th>
+                                    <th class="col-md-2 col-xs-2">@Resource.DateTime</th>
+                                    <th class="col-md-2 col-xs-2">@Resource.AccessPoint</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.table-responsive -->
+                <script id="Grid_Data_Template_tblGrid" type="text/x-jquery-tmpl">
+                    <tr>
+                        <td>${ScreenName}</td>
+                        <td>
+                            {{if OperationType === "I"}}@*Insert*@
+                            @Resource.Add
+                            {{/if}}
+
+                            {{if OperationType === "U"}}@*Update*@
+                            @Resource.Edit
+                            {{/if}}
+                            {{if OperationType === "D"}}@*Deleted*@
+                            @Resource.Delete
+                            {{/if}}
+                        </td>
+                        <td align="center" class="HasObjectInstanceAddColumn">
+                            <span title="@Resource.EntityType" class="badge badge-info" onclick="EntityType.ShowEntityType(${AuditLogID},'${ScreenName}','${OperationType}','${UserName}','${OperationDateTimeCustom}','${AccessPoint}','${ObjectID}')" style="margin-top: -5px;padding-top: -1px;cursor: pointer;min-width: 50px;">${ObjectID}</span>
+                        </td>
+                        <td>${UserName}</td>
+                        <td>${OperationDateTimeCustom}</td>
+                        <td>${AccessPoint}</td>
+                    </tr>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="Master_Form"  style="display:none"></div>
+<script src="~/Scripts/AuditLog.js"></script>
+<script>
+    var traveltype = "@ViewBag.type";
+    var scrnID = @ViewBag.screenID;
+</script>

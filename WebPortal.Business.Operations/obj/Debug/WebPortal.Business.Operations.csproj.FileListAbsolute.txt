@@ -1,0 +1,10 @@
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\WebPortal.Business.Operations.dll.config
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\WebPortal.Business.Operations.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\WebPortal.Business.Operations.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\WebPortal.Business.Entities.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\Newtonsoft.Json.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\WebPortal.Business.Entities.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\bin\Debug\Newtonsoft.Json.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\obj\Debug\WebPortal.Business.Operations.csprojResolveAssemblyReference.cache
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\obj\Debug\WebPortal.Business.Operations.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Business.Operations\obj\Debug\WebPortal.Business.Operations.pdb

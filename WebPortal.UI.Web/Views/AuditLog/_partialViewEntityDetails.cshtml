@@ -1,0 +1,44 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+<style>
+    .bold {
+        font-weight: 800 !important;
+    }
+</style>
+<div id="divEntityDetails" class="col-md-12 col-xs-12 modal fade in" role="dialog" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" style="width:80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" onclick="EntityType.hideEntityDetails();" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resource.EntityType</h4>
+                <div class="col-md-6 col-xs-12">
+                    <span class="bold">@Resource.ScreenName :</span>&nbsp;
+                    <span id="lblScreenName"></span>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <span class="bold">@Resource.EntityID :</span>&nbsp;
+                    <span id="lblObjectID"></span>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <span class="bold">@Resource.User :</span>&nbsp;
+                    <span id="lblUser"></span>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <span class="bold">@Resource.Date :</span>&nbsp;
+                    <span id="lblOperationDate"></span>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <span class="bold">@Resource.AccessPoint :</span>&nbsp;
+                    <span id="lblAccessPoint"></span>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <span class="bold">@Resource.Action :</span>&nbsp;
+                    <span id="lblOperationType"></span>
+                </div>
+            </div>
+            <div id="divEntityDetailsforTable" class="modal-body" style="max-height:500px ;overflow-y: auto;"></div>
+            <div class="modal-footer">
+                <button data-bb-handler="cancel" onclick="EntityType.hideEntityDetails();" type="button" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

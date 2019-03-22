@@ -1,0 +1,114 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = Resource.Customer;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+}
+@using WebPortal.Common.Utilities.Helpers;
+<link rel="stylesheet" href="~/assets/css/chosen.min.css?@jq" />
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+        </li>
+        @*<li><a href="#">@Resource.Masters</a></li>*@
+        <li class="active"><a href="/Customer/Customer/@ViewBag.EncryptScreenID" class="active">@Resource.Customer</a> </li>
+    </ul>
+
+    <div class="pull-right" style="">
+        <span id="divExport" style="display:none;" class="dt-buttons btn-overlap btn-group">
+            <a id="btnExportToExcel" href="#" style="margin-right: 9px !important;color:black;" class="dt-button buttons-excel" tabindex="0" aria-controls="dynamic-table" onclick="ExportToExcelGrid('#tblGrid','excel');">
+                <i style="font-size: 20px !important;color: green;" class="fa fa-file-excel-o bigger-110" title="@Resource.ExportToExcel"></i> <span class="hidden">@Resource.ExportToExcel</span>
+            </a>
+        </span>&nbsp;&nbsp;
+        <span id="divAdd" class="pull-right" title="@Resource.Add"></span>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-12 col-xs-12" id="divGridCustomer">
+            <div id="dtRole_wrapper" class="form-inline dt-bootstrap no-footer">
+                <!-- div.table-responsive -->
+                <!-- div.dataTables_borderWrap -->
+                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGrid" role="grid">
+                    <template>
+                        @Resource.Customer
+                    </template>
+                    <thead>
+                        <tr role="row">
+                            <th class="col-md-4 col-xs-4">@Resource.Customer</th>
+                            @*<th class="col-md-1 col-xs-1">@Resource.CustomerShortCode</th>
+                            <th class="col-md-1 col-xs-1" title="@Resource.AccountManager">@Resource.Manager</th>
+                            <th class="col-md-1 col-xs-1" title="@Resource.EffectiveFromDate">@Resource.From</th>
+                            <th class="col-md-1 col-xs-1" title="@Resource.EffectiveTillDate">@Resource.To</th>*@
+                            <th class="col-md-2 col-xs-2">@Resource.Remark</th>
+                            @*<th class="col-md-1 col-xs-1 CustDashbaordColumn">@Resource.Dashboard</th>
+                            <th class="col-md-1 col-xs-1 CustLocationColumn">@Resource.Location</th>*@
+                            <th class="col-md-1 col-xs-1 DeleteColumn sorting_disabled"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <div id="Master_Form" class="col-md-12 col-xs-12" style="display: none">
+        </div>
+    </div>
+</div><!-- /.page-content -->
+@*<!-- page specific plugin scripts -->*@
+@section Scripts{
+    <script id="Grid_Data_Template_tblGrid" type="text/x-jquery-tmpl">
+        <tr data-id="${CustomerID}">
+            <td align="left" title="@Resource.Edit" class="HasUpdatetds" style="cursor:pointer;" onclick="customer.GetDataByID(xhr_getData_For_Edit, ${CustomerID});">
+                <a>${CustomerName}</a>
+            </td>
+            @*<td align="left">${CustomerShortCode}</td>
+            <td align="left">${AccountManagerName}</td>
+            <td align="center">${EffectiveFromDateCustom}</td>
+            <td align="center">${EffectiveTillDateCustom}</td>*@
+            <td align="left">${Remarks}</td>
+            @*<td align="center" class="CustDashbaordColumn">
+                <span class="fa fa-tachometer fa-2x" style="cursor:pointer;" onclick='customer.RedirectToDashboard(${CustomerID})'></span>
+            </td>
+            <td align="center" class="CustLocationColumn">
+                <span class="fa fa-map-marker fa-2x" style="cursor:pointer;" onclick='customer.RedirectToCustomeLocation(${CustomerID})'></span>
+            </td>*@
+            <td align="center" class="DeleteColumn" title="@Resource.Delete">
+                <span class="fa fa-trash fa-2x DeleteIcon" onclick='customer.Delete(${CustomerID},"${CustomerName}")'></span>
+            </td>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        var scrnID = @ViewBag.screenID;
+        var AddTitle = "@Resource.Add";
+        var EditTitle = "@Resource.Edit";
+        var InvalidEmail = "@Resource.InvalidEmail";
+        var encryptScreenID = "@ViewBag.EncryptScreenID";
+        var CanNotChanageLocationMessages = "@Resource.CanNotChanageLocationMessages";
+        var CustomerNameIsAlreadyExists = "@Resource.CustomerNameIsAlreadyExists";
+        var CustomerCodeIsAlreadyExists = "@Resource.CustomerCodeIsAlreadyExists";
+        var FromDateisGreaterMessage = "@Resource.FromDateisGreaterMessage";
+
+        var Logosizeshouldnotbeexceed = "@Resource.Logosizeshouldnotbeexceed";
+        var ConfirmPasswordMissMatch = "@Resource.ConfirmPasswordMissMatch";
+
+        var HolidayExistMessage = "@Resource.SelectedDateExist";
+        var WeeklyOffExistMessage = "@Resource.Selecteddayexist";
+        var _LocationID = @ViewBag.LocationID;
+        
+    </script>
+
+    <script src="~/Scripts/Customer.js?@jq"></script>
+    <script src="~/Scripts/CustomerAddress.js?@jq"></script>
+    <script src="~/Scripts/CustomerContact.js?@jq"></script>
+    <script src="~/Scripts/CustomerHolidayCalendar.js?@jq"></script>
+    <script src="~/Scripts/CustomerWeeklyoff.js?@jq"></script>
+
+    <script src="~/assets/js/chosen.jquery.min.js?@jq"></script>
+    <link href='~/Assets/css/colorbox.min.css?@jq' rel='stylesheet' />
+    <script src='~/Assets/js/jquery.colorbox.min.js?@jq'></script>
+}

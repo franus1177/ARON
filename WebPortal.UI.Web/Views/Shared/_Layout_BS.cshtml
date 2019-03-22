@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="~/assets/images/fireFavicon.ico" type="image/x-icon">
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    @RenderSection("header", required: false)
+
+    <script type="text/javascript">
+        @using System.Web.Configuration;
+        @using System.Collections;
+        @using WebPortal.Business.Entities.ViewModels;
+        @using WebPortal.Business.Entities.Utility;
+        @{
+            var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+            var CustomerBaseCssFile = WebConfigurationManager.AppSettings["CustomerBaseCssFile"].ToString();
+
+            var User_LoginInfo = this.Session["User_LoginInfo"];
+            var CurrentLanguageCode = "";
+            var IsServiceLineShow_ = false;
+            var _EndUserIDLayout = 0;
+            ViewBag.UserRoleID = "0";
+
+            if (HttpContext.Current.Session["User_LoginInfo"] != null)
+            {
+                Hashtable _User = (Hashtable)User_LoginInfo;
+                CurrentLanguageCode = Convert.ToString(_User["LanguageCode"].ToString());
+                _EndUserIDLayout = Convert.ToInt32(_User["UserID"].ToString());
+                IsServiceLineShow_ = Convert.ToBoolean(WebConfigurationManager.AppSettings["IsServiceLine"]);
+                ViewBag.UserRoleID = Convert.ToInt32(_User["UserRoleID"].ToString());
+            }
+            else
+            {
+                Response.Redirect("~/Login");
+            }
+
+            var getConfigurationDataJson = (dynamic)null;
+            if (HttpContext.Current.Cache["GetConfigurationData"] != null)
+            {
+                GetConfigurationData_VM getConfigurationData = (GetConfigurationData_VM)HttpContext.Current.Cache["GetConfigurationData"];
+                getConfigurationDataJson = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(getConfigurationData);
+            }
+        }
+
+        var CurrentLang = "@CurrentLanguageCode";
+        var _LayoutUserID = @_EndUserIDLayout;
+
+        var  IsServiceLineShow = (@IsServiceLineShow_.ToString().ToLower());
+        var _ModuleCodeLayout = '@ModuleCode.Base';/*Is use for get locations which are assign to user*/
+        var _ServiceLineCodeLayout = 'FR';/*Is use for get locations which are assign to user*/
+
+    </script>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css?@jq" />
+    <link rel="stylesheet" href="~/assets/font-awesome/4.5.0/css/font-awesome.min.css?@jq" />
+    <link href="~/assets/css/common.css?@jq" rel="stylesheet" />
+    <!-- page specific plugin styles -->
+    <!-- text fonts -->
+    <link rel="stylesheet" href="~/assets/css/fonts.googleapis.com.css?@jq" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="~/assets/css/ace.min.css?@jq" class="ace-main-stylesheet" id="main-ace-style" />
+    <link rel="stylesheet" href="~/assets/css/toastr.css?@jq" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="~/assets/css/ace-part2.min.css?@jq" class="ace-main-stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="~/assets/css/ace-skins.min.css?@jq" />
+    <link rel="stylesheet" href="~/assets/css/ace-rtl.min.css?@jq" />
+
+    <!-- basic scripts -->
+    <!--[if !IE]> -->
+    <script src="~/assets/js/jquery-2.1.4.min.js?@jq"></script>
+
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="~/assets/css/ace-ie.min.css?@jq" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="~/assets/js/ace-extra.min.js?@jq"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="~/assets/js/html5shiv.min.js?@jq"></script>
+    <script src="~/assets/js/respond.min.js?@jq"></script>
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="~/assets/css/jquery-ui.custom.min.css?@jq" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datepicker3.min.css?@jq" />
+
+    <script id="LoadingImage" type="text/javascript">
+        $(document).ready(function () {
+            $(document).ajaxStart(function () { $("#wait").css("display", "block"); });
+            $(document).ajaxComplete(function () { $("#wait").css("display", "none"); });
+        });
+
+        //if ('ontouchstart' in document.documentElement) document.write("<script src='~/Scripts/jquery.mobile.custom.min.js?@jq'>" + "<" + "/script>");
+    </script>
+
+    <script src="~/Scripts/Common.js?@jq"></script>
+</head>
+<body class="no-skin">
+    <div id="overlay"></div>
+    <div id="navbar" class="navbar navbar-default ace-save-state">
+        <!-- navbar-fixed-top -->
+        @Html.Partial("~/Views/Shared/_PartialTopNavbar.cshtml")
+    </div>
+    <div class="main-container ace-save-state" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.loadState('main-container') } catch (e) { }
+        </script>
+        <div id="sidebar" class="sidebar responsive ace-save-state">
+            <script type="text/javascript">
+                try { ace.settings.loadState('sidebar') } catch (e) { }
+            </script>
+            @Html.Partial("~/Views/Shared/_PartialModuleList.cshtml")
+            @Html.Partial("~/Views/Shared/_PartialSidebar_BS.cshtml")
+        </div>
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                @RenderBody()
+                <div id="wait" style="display: none; position: absolute; top: 40%; left: 45%; padding: 2px;z-index: 9999;">
+                    <img src="~/assets/images/Loader.gif?@jq" />
+                </div>
+                @Html.Partial("~/Views/Shared/_PartialSessionTimeOut.cshtml")
+            </div>
+        </div><!-- /.main-content -->
+        @Html.Partial("~/Views/Shared/_Footer.cshtml")
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div><!-- /.main-container -->
+    <div id="divPasswordlayout"></div>
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script src="~/assets/js/jquery-1.11.3.min.js?@jq"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js?@jq'>" + "<" + "/script>");
+    </script>
+    <script src="~/assets/js/bootstrap.min.js?@jq"></script>
+
+    @RenderSection("Scripts", required: false)
+
+    <script src="~/assets/js/toastr.js?@jq"></script>
+
+    <!-- Export to excel -->
+    <script src="~/assets/js/tableExport/tableExport.js?@jq"></script>
+    <script src="~/assets/js/tableExport/jquery.base64.js?@jq"></script>
+    <!-- page specific plugin scripts -->
+    <!-- ace scripts -->
+    <script src="~/assets/js/ace-elements.min.js?@jq"></script>
+    <script src="~/assets/js/ace.min.js?@jq"></script>
+
+    <!-- inline scripts related to this page -->
+    <!-- page specific plugin scripts -->
+    <script src="~/assets/js/jquery.dataTables.min.js?@jq"></script>
+    <script src="~/assets/js/jquery.dataTables.bootstrap.min.js?@jq"></script>
+
+    <script src="~/assets/js/jquery.tmpl.min.js?@jq"></script>
+    <!-- not to put bottom -->
+
+    <script src="~/assets/js/jquery-ui.min.js?@jq"></script>
+
+    <script src="~/assets/js/bootstrap-datepicker.min.js?@jq"></script>
+    <script src="~/assets/js/jquery.confirm.min.js?@jq"></script>
+    <script type="text/javascript">
+        if (localStorage["GetConfigurationData"] == null || localStorage["GetConfigurationData"] == undefined) {
+            var ConfigurationDataJson = '@Html.Raw(getConfigurationDataJson)';
+            SetConfigurationData(ConfigurationDataJson);
+        }
+    </script>
+    @Html.Partial("~/Views/Shared/_ResourceInJsonList.cshtml")
+</body>
+</html>

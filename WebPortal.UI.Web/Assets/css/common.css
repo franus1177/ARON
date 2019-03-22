@@ -1,0 +1,80 @@
+﻿asterisk:after{color:red;padding-left:3px;font-family:'Open Sans';content:"*";font-size:xx-small;}
+.panel-heading{padding:8px 15px !important;}
+.dataTables_wrapper .row:first-child{padding-top:4px !important;padding-bottom:2px !important;}
+.dataTables_info {padding-top:5px;}
+.btn {border:0px !important;}
+.pagination {padding-top:2px !important;}
+.page-content {padding:8px 13px 24px !important;}
+
+/*apply here panel panel-default style*/
+.dataTables_wrapper {margin-bottom:20px;background-color:#fff;border-top:1px solid transparent;border-left:1px solid transparent;border-right:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05);border-color:#ddd;}
+.dataTables_wrapper .row:last-child{border-radius:4px !important;}
+.node-selected {color:#FFFFFF !important;background-color:#999 !important;}
+
+.widget-box[class*=widget-color-]>.widget-header{color:#393939 !important;}
+.widget-color-blue2>.widget-header{background:#f5f5f5 !important;border-color:#f5f5f5 !important;}
+.widget-color-blue2{border-color:#f5f5f5 !important;}
+.widget-header>.widget-title{font-weight:400 !important;font-size:13px !important;}
+.tree .tree-selected>.tree-item-name>.ace-icon:first-child{background-color:#65af37 !important;border-color:#65af37 !important;}
+
+.list-group-item{padding:4px 5px !important;}
+
+.label-lg.arrowed-right{font-weight:bold !important;}
+.label-pink, .label.label-pink{font-weight:bold !important;}
+
+.HasUpdatetds {cursor:pointer;}
+.help-block {margin-top:3px !important;margin-bottom:2px !important;}
+.dataTable>tbody>tr.selected>td{background-color:#ccc !important;}
+.dataTable table tbody tr:focus{background-color:#f1dcdc !important;}
+.has-error .form-control,.has-error .form-control:focus,.has-error div.chosen-container ,.has-error .ace-file-container {border-color:#f2a696!important;color:#D68273!important;}
+.has-error div.chosen-container {border-color: #f2a696 !important;color: #D68273 !important;/* border:1px solid;*/}
+
+#overlay {background-color:rgba(170,170,170, 0.10);z-index:9999;position:absolute;left:0;top:0;width:100%;height:100%;display:none;cursor:wait;}
+ .form-group{margin-bottom:3px !important;}
+.DeleteIcon {cursor:pointer;color:#d21c1c;font-size:1.6em !important;}
+.date-picker{cursor:pointer;}
+/*.day:hover{background-color:#d21c1c !important;}*/
+.date-picker table td .active{background-color:#d21c1c !important;}
+.form-group.has-error .chosen-choices{border-color:#D16E6C;color:#D16E6C;}
+.result-selected{display:none !important;}
+.date-picker {background-color:#fff !important;}
+.bootstrap-timepicker-meridian{width:33px !important;}
+
+.pagination>li>a{padding:2px 12px !important;}
+.selectall {display:inline !important;}
+ 
+.chosen-container-single .chosen-single{border-radius:1px !important;border:1px solid #D5D5D5 !important;height:28px !important;box-shadow:0 0 0px #fff inset, 0 0px 0px rgba(0,0,0,.1) !important;background:linear-gradient(#fff 20%,#fff 50%,#fff 52%,#fff 100%) !important;}
+.chosen-container-single .chosen-search:after{content:none !important;}
+.chosen-container {font-size: 12px !important;}
+.table-hover>tbody>tr:hover{background-color:#eae8e8 !important;}
+.mouse-pointer{cursor:pointer !important;}
+.nav-list>li>a>.menu-icon {display:inline-block;min-width:16px !important;margin-right:2px;vertical-align:sub;text-align:center;font-size:18px;font-weight:400;}
+
+.DeleteColumn {width:1%;}
+.NotCheckedToday{background:#eae8e8 !important;width:115px;}
+.NotCheckedBack {background:#eae8e8 !important;width:115px;}
+.CheckedToday {background:#61ab8e !important;width:115px;}
+.CheckedBack {background:#61ab8e !important;width:115px;}
+.NotCheckedFuture {background:#eccb0e !important;width:115px;}
+.CheckedFuture {background:#eccb0e !important; width:115px;}
+ #cboxContent{border:5px solid #000 !important;}
+
+ /*--StartFont------------------*/
+ .nav-list>li>a,body,.control-label,.dropdown-menu>li>a, .breadcrumb{font-size:12px !important;}
+ input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea {
+    font-size:12px !important;
+}
+
+ .badgeText {font-size:14px !important}
+ /*--EndFont------------------*/
+.full-width {width:100%}
+.well {margin-bottom:8px !important;}
+.well-sm {padding: 6px !important;}
+.ui-autocomplete {overflow-y: auto;max-height: 300px;}
+/*Image Popup color box custom Style*/
+#cboxClose, #cboxNext, #cboxPrevious {text-indent: 0px !important;}
+#cboxPrevious, #cboxNext {bottom: 5px !important;}
+#cboxClose {color: #211c1c !important;top: -6px !important;}
+.form-control:focus, input:focus {
+    background-color: #274ea5 !important;color:white!important;
+}

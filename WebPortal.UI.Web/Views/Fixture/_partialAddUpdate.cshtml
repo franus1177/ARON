@@ -1,0 +1,74 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+<style>
+    #tblFixturePartAddEdit.table tr {
+        counter-increment: rowNumber;
+    }
+
+        #tblFixturePartAddEdit.table tr td:first-child::before {
+            content: counter(rowNumber);
+            min-width: 1em;
+            margin-right: 0.5em;
+        }
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span>@Resource.Fixture</span>
+        <div class="pull-right" title="@Resource.Close"><i onclick="Fixture.SetForClose();" style="cursor:pointer;margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>
+    </div>
+    <div class="panel-body">
+        <form action="#" id="frm_FixtureAddUpdate">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Fixture:</label><asterisk></asterisk>
+                        <input type="text" id="txtFixtureName" class="form-control" maxlength="200" placeholder="@Resource.Fixture" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">Code:</label><asterisk></asterisk>
+                        <input type="text" id="txtFixtureCode" class="form-control" maxlength="15" placeholder="Code" />
+                        <p class="help-block" id="lblErrortxtFixtureCode"></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Cost:</label>
+                        <input type="text" id="txtFixtureCost" disabled class="form-control Amount text-right" maxlength="9" placeholder="@Resource.Cost" />
+                        <p class="help-block" id="lblErrortxtFixtureCost"></p>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <table id="tblFixturePartAddEdit" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+                        <thead>
+                            <tr role="row">
+                                <th></th>
+                                <th>@Resource.Part</th>
+                                <th>@Resource.Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <script id="Grid_Data_Template_tblFixturePartAddEdit" type="text/x-jquery-tmpl">
+                        <tr data-id="${PartID}" FixturePartID="${FixturePartID}">
+                            <td></td>
+                            <td class="col-md-9 col-xs-9">${PartName}</td>
+                            <td class="col-md-3 col-xs-3">
+                                <input type="text" id="txtQuantity${PartID}" value="${Quantity}" class="form-control Number text-right" maxlength="9" placeholder="@Resource.Quantity" />
+                            </td>
+                        </tr>
+                    </script>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <input type="hidden" id="hf_FixtureID" value="" />
+        <button type="button" onclick="Fixture.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" onclick="Fixture.ResetDataAddUpdate();" class="btn btn-warning btn-round"><i class="fa fa-history"></i></button>
+        <button type="button" title="@Resource.Close" onclick="Fixture.SetForClose();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Close</button>
+    </div>
+</div>

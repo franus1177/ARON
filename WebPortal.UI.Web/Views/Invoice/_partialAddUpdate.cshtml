@@ -1,0 +1,259 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+<style type="text/css">
+    .ace-file-input .ace-file-container:before {
+        background-color: #fff !important;
+    }
+</style>
+<form id="frm_InvoiceAddUpdate" autocomplete="off" spellcheck="true">
+    <div id="widget-container-col-10" class="col-lg-5 widget-container-col ui-sortable">
+        <div id="widget-box-10" class="widget-box ui-sortable-handle">
+            <div class="widget-header widget-header-small">
+                <div class="pull-right" title="Close">
+                    <i onclick="Invoice.SetForClose();" style="cursor:pointer;margin-top:3px;margin-right: 6px;color: black;" class="fa fa-window-close fa-2x"></i>
+                </div>
+                <div class="widget-toolbar no-border pull-left">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab1" aria-expanded="true">Customer Personal Info.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main padding-6">
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane active">
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="panel-body" style="padding: 8px 2px;">
+                                        <div class="row">
+                                            <div class="col-md-11 col-xs-11">
+                                                <div class="form-group">
+                                                    <label class="control-label">Customer Name</label><asterisk></asterisk>
+                                                    <input type="text" id="txtCustomerName" data-id="" data-label="" autofocus class="form-control" maxlength="100" placeholder="Customer Name" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Address</label>
+                                                    <textarea type="text" id="txtCustomerAddress" class="form-control" maxlength="200" placeholder="Address" rows="5"></textarea>
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Contact No.</label>
+                                                    <input type="text" id="txtContactNumber" class="form-control" maxlength="30" placeholder="Contact No." />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">DOB</label>
+                                                    <input type="text" id="txtDOB" class="form-control date-picker" maxlength="11" placeholder="DOB dd-mm-yyyy" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Anniversary</label>
+                                                    <input type="text" id="txtAnniversaryDate" class="form-control date-picker" maxlength="11" placeholder="Anniversary dd-mm-yyyy" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Refraction by</label>
+                                                    <input type="text" id="txtRefractionBy" class="form-control" maxlength="11" placeholder="Refraction By" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Remarks</label>
+                                                    <textarea type="text" id="txtRemarks" class="form-control" maxlength="200" placeholder="Remarks" rows="5"></textarea>
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="widget-container-col-10" class="col-lg-7 widget-container-col ui-sortable">
+        <div id="widget-box-10" class="widget-box ui-sortable-handle">
+            <div class="widget-header widget-header-small">
+                <div class="widget-toolbar no-border pull-left">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab1" aria-expanded="true">Invoice Details</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main padding-6">
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane active">
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="panel-body" style="padding: 8px 2px;">
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Order Date</label><asterisk></asterisk>
+                                                    <input type="text" disabled id="txtOrderDate" autofocus class="form-control date-picker" maxlength="11" placeholder="Order Date" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-xs-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Order No.</label><asterisk></asterisk>
+                                                    <input type="text" disabled id="txtInvoiceNo" autofocus class="form-control" maxlength="10" placeholder="Order No." />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">Expected Delivery Date.</label>
+                                                    <input type="text" id="txtExpectedDeliveryDate" class="form-control date-picker" maxlength="11" placeholder="Delivery Date" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">For Name</label><asterisk></asterisk>
+                                                    <input type="text" id="txtInvoiceName" class="form-control" maxlength="50" placeholder="For Name" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>EYE</th>
+                                                            <th>SPH</th>
+                                                            <th>CYL</th>
+                                                            <th>AXIS</th>
+                                                            <th>V/A</th>
+                                                            <th>ADD</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>RE</td>
+                                                            <td><input type="text" id="txtRESPH" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtRECYL" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtREAXIS" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtREVA" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtREADD" class="form-control" maxlength="11" /></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LE</td>
+                                                            <td><input type="text" id="txtLESPH" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtLECYL" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtLEAXIS" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtLEVA" class="form-control" maxlength="11" /></td>
+                                                            <td><input type="text" id="txtLEADD" class="form-control" maxlength="11" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-9 col-xs-9">
+                                                <div class="form-group">
+                                                    <label class="control-label">Frame</label><asterisk></asterisk>
+                                                    <input type="text" id="txtFrame" autocomplete="on" class="form-control" maxlength="50" placeholder="Frame" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-xs-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Rs</label><asterisk></asterisk>
+                                                    <input type="text" id="txtFrameAmount" onkeyup="Invoice.CalculatePendingAmount()" class="form-control Amount text-right" maxlength="5" placeholder="Rs" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-9 col-xs-9">
+                                                <div class="form-group">
+                                                    <label class="control-label">Lens</label><asterisk></asterisk>
+                                                    <input type="text" id="txtLens" class="form-control" maxlength="11" placeholder="Lens" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-xs-3">
+                                                <div class="form-group">
+                                                    <label class="control-label">Rs </label><asterisk></asterisk>
+                                                    <input type="text" id="txtLensAmount" onkeyup="Invoice.CalculatePendingAmount()" class="form-control Amount text-right" maxlength="5" placeholder="Rs" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-3 pull-right">
+                                                <div class="form-group">
+                                                    <label class="control-label">Total.</label>
+                                                    <input type="text" disabled id="txtTotal" onkeyup="Invoice.CalculatePendingAmount()" class="form-control Amount text-right" maxlength="5" placeholder="Rs" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-3 pull-right">
+                                                <div class="form-group">
+                                                    <label class="control-label">Advance</label>
+                                                    <input type="text" id="txtAdvanceAmount" onblur="Invoice.CalculatePendingAmount()" class="form-control Amount text-right" maxlength="5" placeholder="Rs" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-3 pull-right">
+                                                <div class="form-group">
+                                                    <label class="control-label">Balance</label>
+                                                    <input type="text" id="txtPendingAmount" onkeyup="Invoice.CalculatePendingAmount()" disabled class="form-control Amount text-right" maxlength="7" placeholder="Rs" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <input type="hidden" id="hf_InvoiceID" />
+                                        <button type="button" id="btn_Save_Data" onclick="Invoice.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
+                                        <button type="button" id="btn_Reset_Data" onclick="Invoice.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

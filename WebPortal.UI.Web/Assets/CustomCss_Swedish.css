@@ -1,0 +1,22 @@
+﻿/*Login form Css Start-----------------------------------------------------------------*/
+body.LoginBody {
+    font-family: 'Arsenal', sans-serif !important;
+    background: #fff !important;
+    background: url('images/Preventive-Maintenance-graphic.jpg') repeat 0px 0px !important;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+.login-form input[type="submit"] {
+    background: #152431 !important;
+    border: #467cab !important;
+}
+label {
+    font-weight: 500!important;
+    font-size: 12px!important;
+}
+
+/*End Login form Css*/

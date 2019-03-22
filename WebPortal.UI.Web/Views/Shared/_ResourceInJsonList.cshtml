@@ -1,0 +1,24 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using WebPortal.UI.Web.App_Start;
+<script>
+    /// Get All language Resource key into json object
+    var ResourceStrings = "@ResourceSerialiser.ToJson(typeof(Resource))";
+    ResourceStrings = JSON.parse(ResourceStrings.replace(/&quot;/g, '"'));
+
+    var Resource = ResourceStrings;
+
+    var GridResourse = {
+        msgDisplay: Resource.Display,// "@Resource.Display",
+        msgRecords: Resource.records,//"@Resource.records",
+        msgNothingFound: Resource.Nothingfound,//"@Resource.Nothingfound",
+        msgShowingPage: Resource.Showingpage,//"@Resource.Showingpage",
+        msgOf: Resource.of,//"@Resource.of",
+        msgNorecords: Resource.Norecordsavailable,//"@Resource.Norecordsavailable",
+        msgFiltered: Resource.filteredfrom,//"@Resource.filteredfrom",
+        msgTotalRecords: Resource.totalrecords,//"@Resource.totalrecords",
+        msgSearch: Resource.SearchLabel,//"@Resource.SearchLabel",
+        msgNext: Resource.NextLabel,//"@Resource.NextLabel",
+        msgPrevious: Resource.PreviousLabel,//"@Resource.PreviousLabel"
+    };
+
+</script>

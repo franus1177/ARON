@@ -1,0 +1,333 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+<style type="text/css">
+    .ace-file-input .ace-file-container:before {
+        background-color: #fff !important;
+    }
+</style>
+
+<div class="col-sm-12 widget-container-col ui-sortable" id="widget-container-col-10">
+    <div class="widget-box ui-sortable-handle" id="widget-box-10">
+        <div class="widget-header widget-header-small">
+            @*<h5 class="widget-title smaller pull-left">Tabbed</h5>*@
+            <div class="pull-right" title="@Resource.Close">
+                <i onclick="customer.SetForClose();" style="cursor:pointer;margin-top:3px;margin-right: 6px;color: black;" class="fa fa-window-close fa-2x"></i>
+            </div>
+            <div class="widget-toolbar no-border pull-left">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active">
+                        <a data-toggle="tab" href="#tab1" aria-expanded="true">@Resource.GeneralInformation</a>
+                    </li>
+                    <li id="tabAddress" class="hide">
+                        <a data-toggle="tab" href="#tab2" aria-expanded="false">@Resource.AddressInfomation</a>
+                    </li>
+                    <li id="tabContact" class="hide">
+                        <a data-toggle="tab" href="#tab3" aria-expanded="false">@Resource.ContactInformation</a>
+                    </li>
+                    <li id="tabHoliday" class="hide">
+                        <a data-toggle="tab" href="#tab4" aria-expanded="false">@Resource.Holiday</a>
+                    </li>
+                    <li id="tabWeeklyOff" class="hide">
+                        <a data-toggle="tab" href="#tab5" aria-expanded="false">@Resource.WeeklyOff</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="widget-body">
+            <div class="widget-main padding-6">
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="panel-body" style="padding: 8px 10px;">
+                                    <form action="/Customer/AddUpdateData2" id="frm_Customer" method="post" autocomplete="off" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-md-2 col-xs-6 hide">
+                                                <div class="form-group">
+                                                    <input type="hidden" id="hf_CustomerID" />
+                                                    <label class="control-label">@Resource.CustomerShortCode</label>
+                                                    <input type="text" autocomplete="off" id="txtCustomerShortCode" oncopy="return false" onpaste="return false"  
+                                                           style="text-transform:uppercase;background-color:#fff !important" class="form-control NumberCharactor" maxlength="4" autofocus placeholder="@Resource.CustomerShortCode" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.CustomerName</label><asterisk></asterisk>
+                                                    <input type="text" id="txtCustomerName" class="form-control" maxlength="50" placeholder="@Resource.CustomerName" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-xs-12 hide">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.LegalEntityName</label>
+                                                    <input type="text" id="txtLegalEntityName" class="form-control" maxlength="50" placeholder="@Resource.LegalEntityName" />
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row hide">
+                                            <div class="col-md-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.Language</label><asterisk></asterisk>
+                                                    <select multiple="" class="chosen-select form-control" id="ddlLanguage" data-placeholder="@Resource.Language">
+                                                        <option>@Resource.Select</option>
+                                                    </select>
+                                                    <p id="lblErrorddlLanguage" class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.Location</label><asterisk></asterisk>
+                                                    <select multiple="" class="chosen-select form-control" id="ddlLocation" data-placeholder="@Resource.Location">
+                                                        <option>@Resource.Select</option>
+                                                    </select>
+                                                    <p id="lblErrorddlLocation" class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row hide">
+                                            <div class="col-md-6 col-xs-12 hide">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.Module</label><asterisk></asterisk>
+                                                    <select multiple="" class="chosen-select form-control" id="ddlModule" data-placeholder="@Resource.Module"></select>
+                                                    <p id="lblErrorddlModule" class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-12 hide">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.ServiceLine</label>@*<asterisk></asterisk>*@
+                                                    <select multiple="" class="chosen-select form-control" id="ddlServiceLine" data-placeholder="@Resource.ServiceLine"></select>
+                                                    <p id="lblErrorddlServiceLine" class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-xs-12 hide">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.AccountManager</label><asterisk></asterisk>
+                                                    <select type="text" id="ddlAccountManager" class="form-control"></select>
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-2 col-xs-12 hide">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.EffectiveFromDate</label><asterisk></asterisk>
+                                                    <div class='input-group'>
+                                                        <input id="txtEffectiveFromDate" readonly type="text" placeholder="DD-MMM-YYYY" class="form-control date-picker" maxlength="11" />
+                                                        <span class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                    <p id="lblErrortxtEffectiveFromDate" class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-xs-12 hide">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.EffectiveTillDate</label>
+                                                    <div class='input-group date' id='datetimepicker7'>
+                                                        <input id="txtEffectiveTillDate" readonly type="text" placeholder="DD-MMM-YYYY" class="form-control date-picker" maxlength="11" />
+                                                        <span class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                    <p id="lblErrortxtEffectiveTillDate" class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">@Resource.Remark</label>
+                                                    <textarea class="form-control" id="txtRemarks" maxlength="100" style="height:100px;" placeholder="@Resource.Remark" style="resize:none;"></textarea>
+                                                    <p class="help-block"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-xs-5 hide">
+                                                <label class="control-label">@Resource.Logo</label>
+                                                <label class="ace-file-input">
+                                                    <input type="file" id="fuLogo" onchange="customer.ShowUploadImagePreview(this)" accept=".jpeg,.jpg,.bmp,.gif,.ico,.png">
+                                                    <span class="ace-file-container">
+                                                        <span id="fuLogoFileName" class="ace-file-name" data-title="@Resource.NoFileInControl">
+                                                            <i class="ace-icon fa fa-upload"></i>
+                                                        </span>
+                                                    </span>
+                                                    <a class="remove" href="#">
+                                                        <i class="ace-icon fa fa-times"></i>
+                                                    </a>
+                                                </label>
+                                                <p class="help-block" id="lblErrorfuLogo"></p>
+                                            </div>
+                                            <div class="col-md-3 col-xs-5 hide">
+                                                <br />
+                                                <ul id="ulfuPreview" class="ace-thumbnails">
+                                                    <li>
+                                                        <a href="#" data-rel="colorbox">
+                                                            <img src="" style="display:none;" id="fuPreview" height="50" width="100" alt="Logo" class="nailthumb-title"/>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer">
+                                    <input type="hidden" id="HCustomerLocation" />
+                                    <button type="button" id="btn_Save_Data" onclick="customer.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+                                    <button type="button" id="btn_Reset_Data" onclick="customer.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab2" class="tab-pane">
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGridCustomerAddress" role="grid" aria-describedby="tblGridCustomerAddress_info">
+                                    <template>
+                                        @Resource.AddressInfomation
+                                    </template>
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="col-lg-2 col-md-2">@Resource.AddressType</th>
+                                            <th class="col-lg-5 col-md-5">@Resource.Address</th>
+                                            <th class="col-lg-2 col-md-2">@Resource.PrimaryAddress</th>
+                                            <th class="col-md-1 col-xs-1 DeleteColumn sorting_disabled"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <script id="Grid_Data_Template_tblGridCustomerAddress" type="text/x-jquery-tmpl">
+                                    <tr data-id="${CustomerID}">
+                                        <td style="cursor:pointer;" class="HasUpdatetds" onclick="javascript:customerAddress.GetDataByID(xhr_getData_For_Edit, '${CustomerID+'_'+AddressType}');">
+                                            <a title="@Resource.Edit">${AddressType}</a>
+                                        </td>
+                                        <td>${Address}</td>
+                                        <td align="center">
+                                            {{if IsPrimaryAddress === true}}
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            {{/if}}
+                                        </td>
+                                        <td align="center" class="DeleteColumn" title="@Resource.Delete">
+                                            <span class="fa fa-trash fa-2x DeleteIcon" onclick="customerAddress.Delete('${CustomerID+'_'+AddressType}','')"></span>
+                                        </td>
+                                    </tr>
+                                </script>
+                            </div>
+                            <div id="Master_Form_CustomerAddress" class="col-lg-5 col-md-5 col-xs-12">
+                                @Html.Partial("~/Views/CustomerAddress/_partialAddressAddUpdate.cshtml")
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab3" class="tab-pane">
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGridCustomerContact" role="grid" aria-describedby="tblGridContact_info">
+                                    <template>
+                                        @Resource.ContactInformation
+                                    </template>
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="col-lg-5 col-md-5">@Resource.ContactName</th>
+                                            <th class="col-lg-3 col-md-3">@Resource.Email</th>
+                                            <th class="col-lg-2 col-md-2">@Resource.Mobile</th>
+                                            <th class="col-lg-1 col-md-1 sorting_disabled"></th>
+                                            <th class="col-md-1 col-xs-1 DeleteColumn sorting_disabled"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <script id="Grid_Data_Template_tblGridCustomerContact" type="text/x-jquery-tmpl">
+                                    <tr data-id="${CustomerID}">
+                                        <td style="cursor:pointer;" class="HasUpdatetds" onclick="javascript:customerContact.GetDataByID(xhr_getData_For_Edit, '${CustomerID+'_'+ContactName}');">
+                                            <a title="@Resource.Edit">${ContactName}</a>
+                                        </td>
+                                        <td>${Email}</td>
+                                        <td align="center">${Mobile}</td>
+                                        <td align="center">
+                                            {{if UserID != null}}
+                                            <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+                                            {{/if}}
+                                        </td>  
+                                        <td align="center" class="DeleteColumn" title="@Resource.Delete">
+                                            <span class="fa fa-trash fa-2x DeleteIcon" onclick="customerContact.Delete('${CustomerID+'_'+ContactName}','')"></span>
+                                        </td>
+                                    </tr>
+                                </script>
+                            </div>
+                            <div id="Master_Form_CustomerContact" class="col-lg-5 col-md-5 col-xs-12">
+                                @Html.Partial("~/Views/CustomerContact/_partialContactAddUpdate.cshtml")
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab4" class="tab-pane">
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblCustomerHolidayGrid" role="grid">
+                                    <template>
+                                        @Resource.HolidayCalendar
+                                    </template>
+                                    <thead>
+                                        <tr role="row">
+                                            <th>@Resource.Location</th>
+                                            <th>@Resource.Date</th>
+                                            <th>@Resource.HolidayName</th>
+                                            <th class="DeleteColumn sorting_disabled"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <script id="Grid_Data_Template_tblCustomerHolidayGrid" type="text/x-jquery-tmpl">
+                                    <tr id="tr${CustomerLocationID}" data-id="${CustomerLocationID}">
+                                        <td>${LocationName}</td>
+                                        <td>${HolidayDateCustom}</td>
+                                        <td>${HolidayName}</td>
+                                        <td align="center" class="DeleteColumn" title="@Resource.Delete">
+                                            <span class="fa fa-trash fa-2x DeleteIcon" onclick='customerHoliday.Delete("${CustomerLocationID}","${HolidayDateCustom}","${HolidayName}")'></span>
+                                        </td>
+                                    </tr>
+                                </script>
+                            </div>
+                            <div id="Master_Form_CustomerHoliday" class="col-lg-5 col-md-5 col-xs-12">
+                                @Html.Partial("~/Views/CustomerLocationHoliday/_partialAddUpdate.cshtml")
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab5" class="tab-pane">
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblCustomerWeeklyOffGrid" role="grid">
+                                    <template>
+                                        @Resource.WeeklyOff
+                                    </template>
+                                    <thead>
+                                        <tr role="row">
+                                            <th>@Resource.Location</th>
+                                            <th>@Resource.WeeklyOff</th>
+                                            <th class="DeleteColumn sorting_disabled"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <script id="Grid_Data_Template_tblCustomerWeeklyOffGrid" type="text/x-jquery-tmpl">
+                                    <tr id="tr${LocationID}" data-id="${LocationID}">
+                                        <td>${LocationName}</td>
+                                        <td>${DayName}</td>
+                                        <td align="center" class="DeleteColumn" title="@Resource.Delete">
+                                            <span class="fa fa-trash fa-2x DeleteIcon" onclick='customerWeeklyoff.Delete("${LocationID}","${DayName}")'></span>
+                                        </td>
+                                    </tr>
+                                </script>
+                            </div>
+                            <div id="Master_Form_CustomerWeeklyOff" class="col-lg-5 col-md-5 col-xs-12">
+                                @Html.Partial("~/Views/CustomerWeeklyOff/_partialWeeklyOffAddUpdate.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span id="lblHeading"></span>
+        @*<div class="pull-right" title="@Resource.Close"><i onclick="customerAddress.SetForClose();" style="cursor: pointer; margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>*@
+    </div>
+    <div class="panel-body">
+        <form id="frm_CustomerAddress">
+            <div class="row">
+                <div >
+                    <div class="form-group col-md-6 col-xs-6">
+                        
+                        <input type="hidden" id="hf_AddressTypeOld" />
+                        <label class="control-label">@Resource.AddressType:</label><asterisk></asterisk>
+                        <input type="text" id="txtAddressType" class="form-control" maxlength="25" autofocus placeholder="@Resource.AddressType" />
+                        <p class="help-block"></p>
+                    </div>
+                    <div class="form-group col-md-6 col-xs-6">
+                        <br />
+                        <input type="checkbox" id="chkIsPrimaryAddress"  />
+                        <label class="control-label">@Resource.PrimaryAddress</label>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Address:</label><asterisk></asterisk>
+                        <textarea id="txtCustomerAddressAddressLine1" class="form-control" maxlength="100" placeholder="@Resource.AddressLine1" ></textarea>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <textarea id="txtCustomerAddressAddressLine2" class="form-control" maxlength="100" placeholder="@Resource.AddressLine2"></textarea>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Country:</label><asterisk></asterisk>
+                        <input type="text" id="txtCountryName" class="form-control" maxlength="25" placeholder="@Resource.Country" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.State:</label><asterisk></asterisk>
+                        <input type="text" id="txtStateName" class="form-control" maxlength="25" placeholder="@Resource.State" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.City:</label><asterisk></asterisk>
+                        <input type="text" id="txtCityName" class="form-control" maxlength="25" placeholder="@Resource.City" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.ZipCode:</label>
+                        <input type="text" id="txtPincode" class="form-control" maxlength="10" placeholder="@Resource.ZipCode" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <button type="button" id="btn_Save_Data" onclick="customerAddress.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" id="btn_Reset_Data" onclick="customerAddress.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+    </div>
+</div>

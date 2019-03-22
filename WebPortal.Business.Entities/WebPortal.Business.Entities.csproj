@@ -1,0 +1,1616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C52147F-7680-40CE-9E58-86FCB51759A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPortal.Business.Entities</RootNamespace>
+    <AssemblyName>WebPortal.Business.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFrameworkExtras.EF6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkExtras.EF6.1.0.0\lib\net45\EntityFrameworkExtras.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EF\AdditionalFrequencyCheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AddUpdateObjectDataFile_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AssessmentParameter.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AssessmentParameterLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AssessmentParameterView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Attribute.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AttributeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuditLog.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AuditPreImage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Category.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CategoryAttribute.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CategoryLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CategoryView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Certification.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CertificationLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CertificationView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CheckListTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CheckListTaskDeviationType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ChecklistTaskGroup.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ChecklistTaskGroupLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ChecklistTaskGroupView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CheckListTaskLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Contract.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ContractCategory.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ContractLocation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ContractScheduledLocation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ControllerSpecialization.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ControllerTagging.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CountryHoliday.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CountryHolidayName.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Course.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseAssessmentParameter.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseDocument.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseFeedbackParameter.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseTypeView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CourseView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Customer.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerAddress.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerContact.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerIRemark.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerLocation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerLocationBarredInspection.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerLocationHoliday.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerLocationHolidayName.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerModule.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerModuleConfiguration.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerModuleName_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerServiceLine.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerServiceLineConfiguration.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CustomerWeeklyOff.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeleteContract_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Department.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DepartmentLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DepartmentView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Designation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DesignationCourse.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DesignationLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DesignationView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Deviation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationLocationPhoto.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationLocationPhotoElement.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationRepairComponent.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationResolutionRemarksPhoto.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationResolutionRemarksPhotoElement.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationTypeDepartment.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationTypeResolution.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationTypeResolutionLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationTypeResolutionRepairComponent.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeviationTypeView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Document.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DocumentCategory.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DocumentCategoryLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DocumentMapping.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DocumentType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DocumentTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Drill.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillActionType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillActionTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillActionTypeView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillCheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillCheckListTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillCheckListTaskLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillCheckListTaskView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillData.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillDataPhoto.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillProposal.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillProposalStatu.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillRegistrationDetailsReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillSetup.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillStakeholder.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillStakeholderLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillStakeholderView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DrillTypeView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Employee.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EmployeeShift.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EmployeeSquad.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EmployeeView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EndUser.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EndUserModule.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EndUserView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FeedbackParameter.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FeedbackParameterLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FeedbackParameterValue.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FeedbackParameterView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Folder.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FolderFile.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASCheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASCheckListTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASCheckListTaskLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASCheckListTaskView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASInspection.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASInspectionPhoto.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASInspectionTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASRegistrationDetailsReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\FRASRiskSetting.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetAllLevelCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetAllLevelLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetLeafLevelCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetLeafLevelContractCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetLeafLevelLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetLocationWithQR_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f_GetRootAndLeafLevelLocations_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationAttributeType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationCountry_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationFRASInspectionType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationInspectionType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationLanguage_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationModule_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationPriorityLevel_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationRiskLevel_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationServiceLevel_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationServiceLine_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationSeverityLevel_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationTimeUnitConversion_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationTimeUnitData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetConfigurationYearlyMonth_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\f__GetSFConfigurationData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GeDrillByMonthlyDay_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GeExistingObjectInstance_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetAdditionalCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetAllLeafLevelContractLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetAssessmentParameterMapping_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetAssessmentParameter_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetAttribute_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetAuditLogReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetBaseDashboardCustomerList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCalenderContractLocationStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCalenderDataMonthly_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCalenderDataYearly_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCategoryLeafNode_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCertificateReportData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCertification_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetChecklistTaskGroup_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCheckListTask_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetChildCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetChildDocumentCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetChildIncidentCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetChildLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractCategoryFrequency_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractExpiryReportData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractLocationCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractScheduledLocationView_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractScheduledLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractScheduleReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContractStatusWebViewReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetContract_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerByMonthlyDay_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerByMonthly_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerDashboardMonthlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerDashboardYearlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerEndUserName_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerTaggingData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerTagging_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerWebViewReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetControllerWiseSpecialization_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCountryHoliday_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCourseForCertificateReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCourseMapping_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCourseTrainingFeedback_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCourseType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCourse_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerAddress_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerAllRootLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerByLocationID_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerChildLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerContactForObjectDataReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerContact_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerDashboardCustomerDetails_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerLocationHoliday_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerLocationRiskLevel_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerRootLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardDeviatonsChart_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardEmergencyInspection_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardInspectionTypeStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardMonthlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardPlansAndAssets_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardTop5Deviations_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardYearlyChart_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSafetyDashboardYearlyDeviationsChart_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerSalesPerson_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomerServiceLineConfiguration_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetCustomer_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDashboardData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDataCourseDocument_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDataForContractReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDataIncidentMonthlySummaryReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDataIncidentObservationReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeletedFilesInfo_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDepartment_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDesignationCoursewise_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDesignation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationByCategoryResolutionDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationByMonthResolutionDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationByResolutionDurationDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationByRiskLevelDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationlist_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationMobileList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationTypeResolution_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationTypeResponsible_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDeviationType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDocumentCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDocumentForUserRole_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDocumentMapping_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDocumentType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDocument_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillActionsData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillActionType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillCheckListTask_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillDrillStakeholderEmployeeAndUsers_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillDrillStakeholder_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillFrequencyReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillMonthlyCalendarDataYearly_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillProposalStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillProposal_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillSetupAndDrillDataCheckListTaskGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillStakeholder_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetDrillType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEmployeeDDLCourseWise_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEmployeeDDL_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEmployeeWiseTrainingReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEmployee_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEmpolyeeCourseFrequencyWiseYearlyReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEndUserName_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEndUser_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEntityDetails_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFeedbackParameterMapping_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFeedbackParameter_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFileinfo_View.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFRASCheckListTask_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFRASCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFRASDashboardLocationDetails_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFRASDashboardRiskLevelStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFRASDashboardYearlyRiskLevelStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetFRASInspectionTask_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetGeneralSchedulerDates_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetHasCustomerLocations_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetHigherFrequency_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentCauseAll_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentCauseType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentCause_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentCheckListTask_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardDataYearlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardIncidentCategoryData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardIncidentTypeData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardOwnerData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardPrioriyLevelData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardSeverityLevelData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardSolutionTimeData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentDashboardStatusData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentImpactAll_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentImpactType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentImpact_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentLocationChecklisttaskwiseReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentLocationWiseYearlyReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentWithCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetIncidentYearlyReportData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionAdditionalCheckList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionCheckListTaskDeviationListGridResolution_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionCheckListTaskDeviationListGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionDeviationResolutionListGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionGridResolution_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionLocationLevelDeviation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionStatusForObjectDataReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionStatusReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetInspectionStatusSnapshotReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLeafLevelContractCategoryWithoutLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLeafLevelContractCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationByMonthResolutionDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationByResolutionDurationDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationByRiskLevelDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationGridResolution_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationListGridResolution_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationList_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationDeviationResolutionListGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocationQRReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetLowerFrequency_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMEIObjectInstanceGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMEmergencyInspectionCheckListTaskDeviationListGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMenuAndScreenData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMenu_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMonthlyControllerPerformance_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMonthlySnapshotByMonthlyDay_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetMonthlySnapshotDataYearly_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetNotInUseReason_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetObjectDataFile_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetObjectInstanceGrid_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetObjectInstance_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetObject_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetOnlySPsTable.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetQRReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetRepairComponent_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetReplacementReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetReportReplacement_Result.cs" />
+    <Compile Include="EF\GetRootCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetRootDocumentCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetRootIncidentCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetRootLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardDeviatonsChart_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardEmergencyInspection_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardInspectionMonthlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardInspectionTypeStatus_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardInspectionWeeklySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardLocationrisklevel_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardMonthlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardPlansAndAssets_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardTop5Deviations_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetSafetyDashboardYearlyChart_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetScreen_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTimeZone_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTopDeviationByCategory_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTopDeviationByLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTopDeviationByMake_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTopDeviationByRegisteredResolved_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTraineeAndEmployee_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTraineeAssessment_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainer_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingAndEmployeeForEmpolyeeReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingAssessmentDataCourseTrainerwise_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingCalenderByMonthlyDay_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingCalenderDataYearly_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingCoursewise_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingDashboardARFFTrainingSchedule_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingDashboardCertificationAndCourses_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingDashboardEmployeesWithScore_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingDashboardMonthlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingDashboardYearlySnapshot_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingDashboaredTrainingAndEmployee_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingEnrolment_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingFeedbackDataCourseTraineewise_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingForTrainingFeedback_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTrainingMaterial_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetTraining_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetUOM_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetUserCustomerLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetUserCustomer_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetUserLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetUserRole_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetVehicleDashboard_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetWorkCompletionReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetWorkingShift_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetWorkInspectionChecklistTask_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetWorkInspection_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetWorkPermitType_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetWorkPermit_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Incident.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentActionReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentAttachment.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCategory.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCategoryLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCause.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCauseType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCauseTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCheckListTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCheckListTaskLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentCheckListTaskView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentDespatch.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentImpact.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentImpactType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentImpactTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentInspection.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentInspectionPhoto.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentInspectionTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentLocation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentObjectInstance.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentRegistrationDetailsReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentStatu.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentStatusLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\IncidentTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\InformationCode.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\InformationValue.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Inspection.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\InspectionCheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\InspectionImageReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\InspectionLast5ImageReport_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Location.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LocationRiskLevel.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MailLog.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MailType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Menu.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MobileDownloadData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MobileDownloadTransactionData_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MobileGetControllerLeafLocation_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MobileUserLogin_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\NotInUseReason.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\NotInUseReasonLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Object.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectAttribute.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectDeviationPhoto.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectDeviationPhotoElement.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectInstance.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectInstanceInspection.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectInstanceMake.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectInstancePhotoElement.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectInstanceTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ObjectRepairComponent.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PublishedURL.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\RepairComponent.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\RepairComponentLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ResolutionInspectionDeviation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Screen.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ScreenAction.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ScreenTable.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Split_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Squad.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TimeZone.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Training.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TrainingAssessment.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TrainingEnrolment.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TrainingFeedback.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TrainingTrainer.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UOM.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UOMLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UpdateObjectInstance_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\URLUsageType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UserLocation.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UserLogin_Result.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UserRole.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UserRoleScreen.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\UserRoleScreenAction.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WebPortalEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebPortalEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WebPortalEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WebPortalEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebPortalEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkCheckList.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkCheckListTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkCheckListTaskLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkingShift.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkInspection.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkInspectionTask.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkPermit.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkPermitType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkPermitTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkPermitTypeView.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkType.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WorkTypeLanguage.cs">
+      <DependentUpon>WebPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryModals\Fixture.cs" />
+    <Compile Include="InventoryModals\FixturePart.cs" />
+    <Compile Include="InventoryModals\FixturePart_TableType.cs" />
+    <Compile Include="InventoryModals\Part.cs" />
+    <Compile Include="InventoryModals\POItem.cs" />
+    <Compile Include="InventoryModals\POItem_TableType.cs" />
+    <Compile Include="InventoryModals\POPart.cs" />
+    <Compile Include="InventoryModals\POPart_TableType.cs" />
+    <Compile Include="InventoryModals\PurchaseOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Constant.cs" />
+    <Compile Include="Utility\DBConnection.cs" />
+    <Compile Include="Utility\Security.cs" />
+    <Compile Include="ViewModels\Base.cs" />
+    <Compile Include="ViewModels\eCustomer.cs" />
+    <Compile Include="ViewModels\File.cs" />
+    <Compile Include="ViewModels\FileModel.cs" />
+    <Compile Include="ViewModels\GetConfigurationData.cs" />
+    <Compile Include="ViewModels\Invoice.cs" />
+    <Compile Include="ViewModels\Language_VM.cs" />
+    <Compile Include="ViewModels\MailLog_VM.cs" />
+    <Compile Include="ViewModels\ObjectData.cs" />
+    <Compile Include="ViewModels\UpdateSorting_VM.cs" />
+    <Compile Include="ViewModels\ViewAssetLoad_VM.cs" />
+    <Compile Include="ViewModels\ViewLoad_VM.cs" />
+    <Compile Include="ViewModels\JsonResponse.cs" />
+    <Compile Include="VM\AuditLog.cs" />
+    <Compile Include="VM\BaseDashboard.cs" />
+    <Compile Include="VM\CustomerDashboard.cs" />
+    <Compile Include="VM\CustomerLocationHoliday.cs" />
+    <Compile Include="VM\CustomerLocationHolidayName.cs" />
+    <Compile Include="VM\CustomerLocationHolidayName_TableType.cs" />
+    <Compile Include="VM\CustomerModule.cs" />
+    <Compile Include="VM\CustomerModule_TableType.cs" />
+    <Compile Include="VM\CustomerWeeklyOff.cs" />
+    <Compile Include="VM\CustomerWeeklyOffName.cs" />
+    <Compile Include="VM\CustomerWeeklyOffName_TableType.cs" />
+    <Compile Include="VM\Location.cs" />
+    <Compile Include="ViewModels\Login.cs" />
+    <Compile Include="ViewModels\Menu.cs" />
+    <Compile Include="ViewModels\Screen.cs" />
+    <Compile Include="ViewModels\SelectListModel.cs" />
+    <Compile Include="ViewModels\User.cs" />
+    <Compile Include="ViewModels\UserRole.cs" />
+    <Compile Include="VM\Customer.cs" />
+    <Compile Include="VM\CustomerAddress.cs" />
+    <Compile Include="VM\CustomerContact.cs" />
+    <Compile Include="VM\CustomerLanguage.cs" />
+    <Compile Include="VM\CustomerLanguage_TableType.cs" />
+    <Compile Include="VM\CustomerLocation.cs" />
+    <Compile Include="VM\CustomerLocation_TableType.cs" />
+    <Compile Include="VM\CustomerServiceLine.cs" />
+    <Compile Include="VM\CustomerServiceLineConfiguration.cs" />
+    <Compile Include="VM\CustomerServiceLine_TableType.cs" />
+    <Compile Include="VM\UserLocation.cs" />
+    <Compile Include="VM\YearlyMonth_VM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="EF\WebPortalEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebPortalEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\WebPortalEntities.edmx.diagram">
+      <DependentUpon>WebPortalEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EF\WebPortalEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebPortalEntities.edmx</DependentUpon>
+      <LastGenOutput>WebPortalEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\WebPortalEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebPortalEntities.edmx</DependentUpon>
+      <LastGenOutput>WebPortalEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,119 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using WebPortal.Business.Operations.Repository;
+@using WebPortal.Business.Entities.ViewModels;
+@{
+    IEnumerable<SelectListItem> TimeZoneList = new DropDownRepository().GetTimeZone(new TimeZone_VM());
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span id="lblHeadingContact"></span>
+        @*<div class="pull-right" title="@Resource.Close"><i onclick="customerAddress.SetForClose();" style="cursor: pointer; margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>*@
+    </div>
+    <div class="panel-body">
+        <form id="frm_CustomerContact" autocomplete="off">
+            <div class="row">
+                <div class="form-group col-md-12 col-xs-12">
+                   
+                    <label class="control-label">@Resource.ContactName:</label><asterisk></asterisk>
+                    <input type="text" id="txtContactName" class="form-control" maxlength="50" autofocus placeholder="@Resource.ContactName" />
+                    <p class="help-block"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Email:</label><asterisk></asterisk>
+                        <input type="text" id="txtEmail" class="form-control" maxlength="100" placeholder="@Resource.Email"  autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Mobile:</label>
+                        <input type="text" id="txtMobile" class="form-control" maxlength="50" placeholder="@Resource.Mobile" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Telephone:</label>
+                        <input type="text" id="txtTelephone" class="form-control" maxlength="50" placeholder="@Resource.Telephone" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 col-xs-6">
+                    <br />
+                    <input type="checkbox" id="chkIsPrimaryContact" />
+                    <label class="control-label">@Resource.PrimaryContact</label>
+                    <p class="help-block"></p>
+                </div>
+                <div class="form-group col-md-6 col-xs-6">
+                    <br />
+                    <input type="checkbox" id="chkIsHasWebAccess" class="ace-icon" />
+                    <label class="control-label">@Resource.HasWebAccess</label>
+                    <p class="help-block"></p>
+                </div>
+            </div>
+            <div class="row" id="divEndUserBlock" style="display:none;">
+                <div id="hidePass" class="col-md-6 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Password</label><asterisk  class="lblPasswordRequired"></asterisk>
+                        <input type="password" id="txtPassword" class="form-control" maxlength="16" placeholder="@Resource.Password" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div id="hideConfPass" class="col-md-6 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.ConfirmPassword</label><asterisk class="lblPasswordRequired"></asterisk>
+                        <input type="password" id="txtConfirmPassword" onchange="customerContact.CheckPassword();" class="form-control" maxlength="16" placeholder="@Resource.ConfirmPassword" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.UserRole</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlUserRole", new List<SelectListItem>(), Resource.Select, new { @class = "form-control", @disabled= "disabled" })
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Language</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlLanguageContact", new List<SelectListItem>(), Resource.Select, new { @class = "form-control" })
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.UTCOffset</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlUTCOffset", TimeZoneList, Resource.Select, new { @class = "form-control", @id = "ddlUTCOffset" })
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Module</label><asterisk></asterisk>
+                        <select multiple="" onchange="customerContact.bindDefaultModule();" class="chosen-select form-control" id="ddlModuleContact" data-placeholder="@Resource.Module"></select>
+                        <p id="lblErrorddlModule" class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.DefaultModule</label><asterisk></asterisk>
+                        <select class="form-control" id="ddlDefaultModule" placeholder="@Resource.DefaultModule"></select>
+                        <p id="lblErrorddlDefaultModule" class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <input type="hidden" id="hf_ContactNameOld" />
+        <button type="submit" id="btn_Save_DataContact" onclick="customerContact.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" id="btn_Reset_DataContact" onclick="customerContact.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+        <button type="button" title="@Resource.Close" onclick="customerContact.ClearData();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Cancel</button>
+    </div>
+</div>

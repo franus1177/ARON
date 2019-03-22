@@ -1,0 +1,95 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    ViewBag.Title = Resource.Part;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+}
+
+<style>
+    #tblGrid.table tr {
+        counter-increment: rowNumber;
+    }
+
+        #tblGrid.table tr td:first-child::before {
+            content: counter(rowNumber);
+            min-width: 1em;
+            margin-right: 0.5em;
+        }
+</style>
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+        </li>
+        <li><a href="#">@Resource.BasicSetting</a></li>
+        <li class="active"><a href="/Part/Index/@ViewBag.EncryptScreenID" class="active">@Resource.Part</a></li>
+    </ul>
+    <div id="divActions" class="pull-right" style="padding-right: 12px;">
+        <span id="divExport" style="display:none;" class="dt-buttons btn-overlap btn-group">
+            <a id="btnExportToExcel" href="#" style="margin-right: 9px !important;color:#393939;" class="dt-button buttons-excel" tabindex="0" aria-controls="dynamic-table" onclick="ExportToExcelGrid('#tblGrid','excel');">
+                <i style="font-size: 20px !important;color: green;" class="fa fa-file-excel-o bigger-110" title="@Resource.ExportToExcel"></i> <span class="hidden">@Resource.ExportToExcel</span>
+            </a>
+        </span>&nbsp;&nbsp;
+        <span id="divAdd" class="pull-right" title="@Resource.Add"></span>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div id="divGridPart" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div id="dtRole_wrapper" class="form-inline dt-bootstrap no-footer">
+                <table id="tblGrid" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+                    <template>
+                        @Resource.Part
+                    </template>
+                    <thead>
+                        <tr role="row">
+                            <th></th>
+                            <th>@Resource.Part</th>
+                            <th>@Resource.Cost</th>
+                            <th>@Resource.Quantity</th>
+                            <th>@Resource.Vendor</th>
+                            <th>@Resource.Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <div id="MasterForm" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" hidden></div>
+    </div>
+</div><!-- /.page-content -->
+<!-- page specific plugin scripts -->
+@section Scripts{
+    <script id="Grid_Data_Template_tblGrid" type="text/x-jquery-tmpl">
+        <tr data-id="${PartID}">
+            <td></td>
+            <td class="HasUpdatetds col-md-9 col-xs-9">
+                <a href="javascript:Part.GetDataByID(${PartID});" style="cursor:pointer;" title="@Resource.Edit">${PartName}</a>
+            </td>
+            <td align="center" class="col-md-3 col-xs-3">${PartCost}</td>
+            <td align="center" class="col-md-3 col-xs-3">${PartQuantity}</td>
+            <td align="left" class="col-md-3 col-xs-3">${PartVendor}</td>
+            <td align="left" class="col-md-3 col-xs-3">${PartDescription}</td>
+            <td align="center" class="DeleteColumn NoExport" title="@Resource.Delete">
+                <span class="fa fa-trash fa-2x DeleteIcon" onclick='Part.Delete(${PartID},"")'></span>
+            </td>
+        </tr>
+    </script>
+    <script src="~/Scripts/Part.js?@jq"></script>
+    <script type="text/javascript">
+        var scrnID = @ViewBag.screenID;
+
+        $(document).ready(function(){
+            Part.BindGrid();
+
+        });
+
+    </script>
+
+}

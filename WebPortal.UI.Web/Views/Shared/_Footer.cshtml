@@ -1,0 +1,10 @@
+﻿@using System.Web.Configuration;
+@{
+    var InnerFooterText = WebConfigurationManager.AppSettings["InnerFooterText"].ToString();
+}
+
+@*<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-content"><div class="pull-right">@InnerFooterText</div>&nbsp; &nbsp;</div>
+    </div>
+</div>*@

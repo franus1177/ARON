@@ -1,0 +1,27 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span>Manage Role</span>
+        <div class="pull-right" title="@Resource.Close"><i onclick="userRole.SetForClose();" style="cursor:pointer;margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>
+    </div>
+    <div class="panel-body">
+        <form action="#" id="frm_UserRole">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <input type="hidden" id="hf_UserRoleID" value="" />
+                        <label class="control-label">@Resource.UserRole:</label><asterisk></asterisk>
+                        <input type="text" id="txtUserRole" class="form-control" maxlength="50" placeholder="@Resource.UserRole" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <button type="button" id="btn_Save_Data" onclick="userRole.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" id="btn_Reset_Data" onclick="userRole.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+        <button type="button" title="@Resource.Close" onclick="userRole.SetForClose();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Cancel</button>
+    </div>
+</div>

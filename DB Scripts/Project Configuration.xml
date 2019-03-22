@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <ConnectionString>
+    <DataSourse>sql5040.site4now.net</DataSourse><!--Sql Instance Name/Sever IP Address for remove connection-->
+    <IntegratedSecurity>false</IntegratedSecurity> <!-- if true then userid and password is required --> 
+    <UserID>DB_A44F9F_eyematters_admin</UserID>
+    <Password>vilas123</Password>
+    <InitialCatalog>DB_A44F9F_eyematters</InitialCatalog>
+    <!--DB Name-->
+  </ConnectionString>
+
+  <FolderSetting>
+    <ProjectFolderPath>d:\</ProjectFolderPath>
+    <ProjectFolderName>Web Portal-Inventory\Tool Code</ProjectFolderName>
+    <ViewModelFolderName>Models</ViewModelFolderName>
+      <RepositoryFolderName>Repository</RepositoryFolderName>
+        <ControllerFolderName>Controllers</ControllerFolderName>
+    <!--it can include Stored Procedure, function, trigger, Table schema, Configuration File .-->
+    <DBScriptFolderName>DB Script</DBScriptFolderName>
+  </FolderSetting>
+
+  <namespaces>
+    <Entity EntityFrameWorkConnectionClassName="WebPortalEntities" ADODotNetConnectionClassName="DBConnection">WebPortal.Business.Entities.EF</Entity>
+    <ViewModel>WebPortal.Business.Entities.InventoryModels</ViewModel>
+
+    <Repository>WebPortal.Business.Operations.InventoryRepository</Repository>
+    <RepositoryInterFace>WebPortal.Business.Operations.RepositoryInterfaces</RepositoryInterFace>
+    <Controller>WebPortal.UI.Web.Work.Controllers</Controller>
+    <Utility>WebPortal.Business.Entities.Utility</Utility>
+  </namespaces>
+  
+  <BaseModelName>Base_VM</BaseModelName>
+  <ModelPostFixText>_VM</ModelPostFixText>
+  <RepositoryPostFixText>Repository</RepositoryPostFixText>
+  <ControllerPostFixText>Controller</ControllerPostFixText>
+
+  <StoredProcedureSetting>
+    <ParamterPreFixName>@p_</ParamterPreFixName>
+    <AddProcedurePreFix>Add</AddProcedurePreFix>
+    <UpdateProcedurePreFix>Update</UpdateProcedurePreFix>
+    <DeleteProcedurePreFix>Delete</DeleteProcedurePreFix>
+    <SelectProcedurePreFix>Get</SelectProcedurePreFix>
+  </StoredProcedureSetting>
+
+</Project>

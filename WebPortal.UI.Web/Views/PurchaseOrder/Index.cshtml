@@ -1,0 +1,123 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    ViewBag.Title = Resource.PO;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+}
+
+<link href="~/Assets/css/chosen.min.css?@jq" rel="stylesheet" />
+
+<style type="text/css">
+    #tblGrid.table tr {
+        counter-increment: rowNumber;
+    }
+
+        #tblGrid.table tr td:first-child::before {
+            content: counter(rowNumber);
+            min-width: 1em;
+            margin-right: 0.5em;
+        }
+</style>
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+        </li>
+        <li><a href="#">@Resource.BasicSetting</a></li>
+        <li class="active"><a href="/PurchaseOrder/Index/@ViewBag.EncryptScreenID" class="active">@Resource.PO</a></li>
+    </ul>
+    <div id="divActions" class="pull-right" style="padding-right: 12px;">
+        <span id="divExport" style="display:none;" class="dt-buttons btn-overlap btn-group">
+            <a id="btnExportToExcel" href="#" style="margin-right: 9px !important;color:#393939;" class="dt-button buttons-excel" tabindex="0" aria-controls="dynamic-table" onclick="ExportToExcelGrid('#tblGrid','excel');">
+                <i style="font-size: 20px !important;color: green;" class="fa fa-file-excel-o bigger-110" title="@Resource.ExportToExcel"></i> <span class="hidden">@Resource.ExportToExcel</span>
+            </a>
+        </span>&nbsp;&nbsp;
+        <span id="divAdd" class="pull-right" title="@Resource.Add"></span>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div id="divGridPurchaseOrder" class="col-lg-12 col-md-12 col-xs-12">
+            <div id="dtRole_wrapper" class="form-inline dt-bootstrap no-footer">
+                <table id="tblGrid" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid">
+                    <template>
+                        Purchase Order
+                    </template>
+                    <thead>
+                        <tr role="row">
+                            <th></th>
+                            <th>@Resource.Vendor</th>
+                            <th>@Resource.PONumber</th>
+                            <th>PO Submit Date</th>
+                            <th>PO Est. Ship Date</th>
+                            <th>PO Act. Ship Date</th>
+                            <th>PO Cost</th>
+                            <th>PO Price</th>
+                            <th>PO Status</th>
+                            @*<th>Additional Parts</th>*@
+                            <th class="DeleteColumn"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <div id="MasterForm" class="col-lg-12 col-md-12 col-xs-12" hidden></div>
+    </div>
+</div><!-- /.page-content -->
+
+<div id="divTreePopup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #f5f5f5; color: #555555">
+                <h4 class="modal-title">Additional Parts</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div id="divGridLocation2" class="col-lg-12 col-md-12 col-xs-12">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="" id="hf_POPartID" />
+                <button type="button" data-id="" onclick="PurchaseOrder.AddUpdatePart()" for="Grid" class="btn btn-success btn-round pull-left"><i class="fa fa-check-square-o"></i>&nbsp;@Resource.Submit</button>
+                <button type="button" data-dismiss="modal" title="@Resource.Close" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page specific plugin scripts -->
+@section Scripts{
+    <script id="Grid_Data_Template_tblGrid" type="text/x-jquery-tmpl">
+        <tr data-id="${POID}">
+            <td align="center" class="col-md-1 col-xs-1"></td>
+            <td align="left" class="col-md-1 col-xs-3">${CustomerName}</td>   
+            <td class="HasUpdatetds col-md-1 col-xs-1">
+                <a href="javascript:PurchaseOrder.GetDataByID(${POID});" style="cursor:pointer;" title="@Resource.Edit">${PONumber}</a>
+            </td>
+            <td align="center" class="col-md-1 col-xs-3">${PORecDateCustom}</td>
+            <td align="center" class="col-md-1 col-xs-3">${POEstShipDateCustom}</td>
+            <td align="center" class="col-md-1 col-xs-3">${POActShipDateCustom}</td>
+            <td align="right" class="col-md-1 col-xs-3">{{if POCost > 0 }}$ ${POCost}{{/if}}</td>
+            <td align="right" class="col-md-1 col-xs-3">{{if POPrice > 0 }}$ ${POPrice}{{/if}}</td>
+            <td align="center" class="col-md-1 col-xs-3">${POCompletedStatus}</td>
+            @*<td align="center" class="col-md-1 col-xs-3">
+                <span class="fa fa-list fa-2x mouse-pointer" onclick="PurchaseOrder.OpenParts(this)"></span>
+            </td>*@
+            <td align="center" class="DeleteColumn NoExport" title="@Resource.Delete">
+                <span class="fa fa-trash fa-2x DeleteIcon" onclick='PurchaseOrder.Delete(${POID},"${PONumber}")'></span>
+            </td>
+        </tr>
+    </script>
+    <script src="~/Assets/js/chosen.jquery.min.js?@jq"></script>
+    <script src="~/Scripts/PurchaseOrder.js?@jq"></script>
+    <script type="text/javascript">
+        var scrnID = @ViewBag.screenID;
+        PurchaseOrder.BindGrid();
+    </script>
+}

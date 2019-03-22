@@ -1,0 +1,131 @@
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.dll.config
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.pdb
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\AutoMapper.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.SqlServer.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFrameworkExtras.EF6.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\log4net.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Helpers.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Mvc.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Razor.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Razor.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\Newtonsoft.Json.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.pdb
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.dll.config
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.pdb
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.dll.config
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\AutoMapper.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.SqlServer.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFrameworkExtras.EF6.pdb
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\log4net.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Helpers.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Mvc.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Razor.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Razor.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.pdb
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.pdb
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\bin\Debug\Newtonsoft.Json.xml
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csprojAssemblyReference.cache
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csproj.CoreCompileInputs.cache
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csproj.CopyComplete
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.dll
+F:\_VilasWorkspaces\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.dll.config
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\AutoMapper.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.SqlServer.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFrameworkExtras.EF6.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\log4net.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Helpers.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Mvc.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Razor.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Razor.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\Newtonsoft.Json.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.dll.config
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.dll.config
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\AutoMapper.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFramework.SqlServer.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\EntityFrameworkExtras.EF6.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\log4net.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Helpers.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Mvc.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.Razor.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Razor.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.pdb
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\bin\Debug\Newtonsoft.Json.xml
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csprojAssemblyReference.cache
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csproj.CoreCompileInputs.cache
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csproj.CopyComplete
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.dll
+F:\_VilasWorkspaces\Bkup\eSafecS\eSafec\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.dll.config
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Common.Utilities.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\AutoMapper.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\EntityFramework.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\EntityFrameworkExtras.EF6.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\log4net.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.Helpers.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.Mvc.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.Razor.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\zxing.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\Newtonsoft.Json.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Entities.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\WebPortal.Business.Operations.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\AutoMapper.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\EntityFramework.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\EntityFrameworkExtras.EF6.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\log4net.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.Helpers.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.Mvc.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.Razor.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\zxing.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\zxing.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.pdb
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\zxing.presentation.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\bin\Debug\Newtonsoft.Json.xml
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.csprojResolveAssemblyReference.cache
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.dll
+D:\Vilas Giri Project\InventoryNew\WebPortal.UI.Web\WebPortal.Common.Utilities\obj\Debug\WebPortal.Common.Utilities.pdb

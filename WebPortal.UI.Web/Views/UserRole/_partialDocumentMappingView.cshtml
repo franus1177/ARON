@@ -1,0 +1,140 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+
+<style>
+    .hideShow {
+        opacity: 0.5;
+        cursor: not-allowed !important;
+        text-decoration: none !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/assets/css/chosen.min.css" />
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span>Manage Role</span>
+        <div class="pull-right" title="@Resource.Close"><i onclick="DocumentMapping.SetForClose();" style="cursor:pointer;margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>
+    </div>
+    <div class="panel-body">
+        <form action="#" id="frm_DocumentMapping">
+            <div class="row">
+                <div class="col-md-6 col-xs-10">
+                    <label class="control-label">@Resource.DocumentCategory</label><asterisk></asterisk>
+                    <div class="chosen-container chosen-container-single" style="width:100%">
+                        <button type="button" id="divExpandedCategoryGrid" CustomerParentLocationName="" style="width: 100%;" class="chosen-single" title="@Resource.SelectCategoryWarning"
+                                onclick="DocumentCategorySelect.ShowParentTree(this, true);">
+                            <span style="display: initial;overflow: visible;" id="btnChangeParentCategoryGrid" class="pull-left">
+                                @Resource.All
+                            </span>&nbsp;
+                            <div style="float:right"><b></b></div>
+                        </button>
+                    </div>
+                    <p class="help-block"></p>
+                </div>
+                <div class="col-md-1 col-xs-2" style="top: 16px; right: 15px;">
+                    <button type="button" title="@Resource.Reset" class="btn btn-warning btn-round pull-left" onclick="Document.ResetCategoryData();"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12" id="divGridUser">
+                    <div id="dtRole_wrapper" class="form-inline dt-bootstrap no-footer">
+                        <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblDocumentGrid" role="grid">
+                            <template>
+                                @Resource.Document
+                            </template>
+                            <thead>
+                                <tr role="row">
+                                    <th class="col-md-1 col-xs-1" align="center">
+                                        <input name="checks" type="checkbox" class="tblDocumentGridHeader ace" style="margin-left: 9px;">
+                                        <span class="lbl" style="margin-left: 9px;"></span>
+                                    </th>
+                                    <th></th>
+                                    <th>@Resource.Document</th>
+                                    <th>@Resource.DocumentCategory</th>
+                                    <th>@Resource.Type</th>
+                                    <th>@Resource.DocumentNumber</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <script id="Grid_Data_Template_tblDocumentGrid" type="text/x-jquery-tmpl">
+
+                            <tr id="tr${DocumentID}" data-id="${DocumentID}">
+                                <td style="text-align: center;">
+                                    <input type="checkbox" name="Document" value="${DocumentID}" class="tblDocumentGridRow ace" id="${DocumentID}Document">
+                                    <span class="lbl"></span>
+                                </td>
+                                <td style="cursor:pointer;text-align: center;" class="HasUpdatetds" onclick="Document.FileDownload(${DocumentID},'${FileType}',${FilePathFormat});">
+                                    {{if FileType === ".jpeg" || FileType === ".jpg" || FileType === ".bmp" || FileType === ".gif" || FileType === ".ico" || FileType === ".png"}}
+                                    <i class="fa fa-file-image-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType === ".xlsx" || FileType === ".xls"}}
+                                    <i class="fa fa-file-excel-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType === ".docx" || FileType === ".doc"}}
+                                    <i class="fa fa-file-word-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType === ".txt"}}
+                                    <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType === ".pdf"}}
+                                    <i class="fa fa-file-pdf-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType === ".ppt"}}
+                                    <i class="fa fa-file-powerpoint-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType === ".zip"}}
+                                    <i class="fa fa-file-archive-o" aria-hidden="true" style="font-size: 20px;"></i>
+                                    {{/if}}
+                                    {{if FileType != "" || FileType != null}}
+                                    {{/if}}
+                                </td>
+                                <td style="cursor:pointer;" class="HasUpdatetds" onclick="Document.GetDataByID(Document.xhr_getData_For_Edit, ${DocumentID});">
+                                    ${DocumentName}
+                                </td>
+                                <td>${DocumentCategoryName}</td>
+                                <td>${DocumentTypeName}</td>
+                                <td>${DocumentNumber}</td>
+                            </tr>
+
+                        </script>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <div id="Master_Form" class="col-md-5 col-xs-12" style="display: none"> </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <input type="hidden" id="hf_UserRoleID" />
+        <button type="button" id="btn_Save_Data" onclick="DocumentMapping.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" id="btn_Reset_Data" onclick="DocumentMapping.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+        <button type="button" title="@Resource.Close" onclick="DocumentMapping.SetForClose();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Cancel</button>
+    </div>
+</div>
+@Html.Partial("_partialDocumentCategorySelect")
+
+@section Scripts{
+
+
+
+    <script type="text/javascript">
+
+        var AddLocation = "@Resource.Add";
+        var EditLocation = "@Resource.Edit";
+        var DeleteConfMessage = "@Resource.DeleteConfMessage";
+        var YesText = "@Resource.Yes";
+        var NoText = "@Resource.No";
+        var ChangeParentLocationText = "@Resource.ChangeParentLocation";
+        var ExpandAllText = "@Resource.ExpandAll";
+        var CollapseAllText = "@Resource.CollapseAll";
+        var NorecordsavailableMessage = "@Resource.Norecordsavailable";
+        var hasCustomerTooltipMessage = "@Resource.HasCustomerTooltip";
+        var LocationNameExist = "@Resource.LocationNameExist";
+        var locationID = null;
+        var DocumentCategoryID = null;
+
+    </script>
+
+}

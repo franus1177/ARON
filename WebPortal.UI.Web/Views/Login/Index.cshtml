@@ -1,0 +1,193 @@
+﻿@model WebPortal.Business.Entities.ViewModels.LoginViewModel
+@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@using WebPortal.Business.Entities.Utility;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    var CustomerBaseCssFile = WebConfigurationManager.AppSettings["CustomerBaseCssFile"].ToString();
+    ViewBag.Title = Resource.Login;
+    Layout = null;
+    var WebLoginLogo = WebConfigurationManager.AppSettings["WebLoginLogo"].ToString();
+    var FooterText = WebConfigurationManager.AppSettings["FooterText"].ToString();
+    var request = HttpContext.Current.Request.Url;
+    var baseurl = request.Scheme + "://" + request.Authority;
+    var logourl = baseurl + WebLoginLogo;
+
+    var IPAddress = Common.GetIpAddress(null);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <META Http-Equiv="Cache-Control" Content="no-cache">
+    <META Http-Equiv="Pragma" Content="no-cache">
+    <META Http-Equiv="Expires" Content="0">
+    <title>@Resource.Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/assets/css/loginstyle.css?@jq" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/@CustomerBaseCssFile" rel="stylesheet" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+    <link href="~/assets/css/toastr.css?@jq" rel="stylesheet" />
+
+    <style>
+        .login-form input[type="text"], .login-form input[type="password"] {
+            opacity: 0.9;
+        }
+    </style>
+    <script src="~/assets/js/jquery-2.1.4.min.js?@jq"></script>
+    <script>
+        $(document).ready(function () {
+            function disableBack() { window.history.forward(); }
+
+            window.onload = disableBack();
+            window.onpageshow = function (evt) { if (evt.persisted) disableBack(); }
+
+            $("#IPAddress").val('@IPAddress');
+        });
+
+    </script>
+</head>
+<body class="LoginBody img-responsive">
+    <!-- main -->
+    <div class="main-agileinfo slider ">
+        <div class="items-group">
+            <div class="item agileits-w3layouts">
+                <div class="block text main-agileits" style="box-shadow: 0px 0px 70px #000;opacity: 0.9;">
+                    <span class="circleLight"></span>
+                    <!-- login form -->
+                    <div class="login-form loginw3-agile">
+                        <div class="agile-row" style="text-align: center;">
+                            <img src="@logourl" alt="Logo">
+                            <div id="divLogin">
+                                <div class="login-agileits-top" style="text-align: left;">
+                                    @using (Html.BeginForm("Login", "Login", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <form action="#" method="post">
+                                            <p>
+                                                @Html.HiddenFor(x => x.IPAddress, new { @value = "" })
+                                                @Html.TextBoxFor(x => x.Username, new { @tabindex = 0, @class = "form-control", @placeholder = Resource.LoginName, @maxlength = 50 })
+                                                @Html.ValidationMessageFor(x => x.Username)
+                                            </p>
+                                            <p>
+                                                @Html.PasswordFor(x => x.Password, new { @tabindex = 0, @class = "form-control", @placeholder = Resource.Password, @maxlength = 16 })
+                                                @Html.ValidationMessageFor(x => x.Password)
+                                            </p>
+                                            <p><input id="btn_Login" type="submit" value="@Resource.Login"></p>
+                                            <span style="color:red;">@ViewBag.Error @ViewBag.LogoutMessage</span>
+                                        </form>
+                                    }
+
+                                </div>
+                                <div class="login-agileits-bottom wthree">
+                                    <h6><a href="#" onClick="showforgetPassDiv();">@Resource.Forgotpassword</a></h6>
+                                </div>
+                            </div>
+                            <div id="forgetPass"  style="display: none;">
+                                <div class="login-agileits-top" style="text-align: left;">
+                                    <p>
+                                        <h3 style="text-align: center;">Forgot Password</h3>
+                                    </p>
+
+                                    <p>
+                                        @Html.TextBox("Email2", "", new { @class = "form-control", @maxlength = 50, placeholder = "Email" })
+                                    <p class="help-block"></p>
+                                    </p>
+
+                                    <p>
+                                    <p><input id="btn_ForgotPassword" type="submit" value="@Resource.Submit">  </p>
+                                    <span style="color:red;" id="ErrorMeg">@ViewBag.ForPasswordError</span>
+                                    </p>
+                                </div>
+                                <div class="login-agileits-bottom wthree">
+                                    <h6><a href="#" onClick="showLoginDiv();">@Resource.BacktoLogin</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3lsfooteragileits" title="IP Address:@IPAddress"> <p>@FooterText</p></div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+    <!-- inline scripts related to this page -->
+    <script src="~/assets/js/toastr.js?@jq"></script>
+    <script src="~/Scripts/Common.js?@jq"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            localStorage.removeItem("UserScreenInfo");
+            localStorage.removeItem("UserScreenActionInfo");
+            localStorage.removeItem("GetConfigurationData");
+
+            $('#Username').focus();
+            $('#UserPassword').toggleClass('active');
+
+            $("#btn_ForgotPassword").click(function () {
+
+                var FormData = Get_All_Form_Data2();
+
+                if ($("#Email2").val() === null || $("#Email2").val() === "") {
+
+                    $("#ErrorMeg").html("Email can't be empty");
+                }
+                else {
+                    $("#ErrorMeg").html("");
+
+                    $.ajax({
+                        type: "POST", cache: false, url: "/Login/User_ForgotPassword",
+                        data: { EmailID: $("#Email2").val() },
+                        success: function (data) {
+                            if (data != null) {
+                                if (data.Status == 'Success') {
+                                    toastr.success(data.Message);
+                                    $("#Email2").val('');
+                                    setTimeout(function () { window.location = "/Login/Index"; }, 5000);
+                                }
+                                else {
+                                    $("#ErrorMeg").html(data.Message);
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        function Get_All_Form_Data2() {
+            var Email2 = $("#Email2").val();
+            return Email2;
+        }
+
+        function showforgetPassDiv() {
+            $("#divLogin").hide();
+            $("#forgetPass").show();
+        }
+
+        function showLoginDiv() {
+            $("#divLogin").show();
+            $("#forgetPass").hide();
+        }
+
+        jQuery(function ($) {
+            $(document).on('click', '.toolbar a[data-target]', function (e) {
+                e.preventDefault();
+                var target = $(this).data('target');
+                $('.widget-box.visible').removeClass('visible');
+                $(target).addClass('visible');
+            });
+        });
+
+    </script>
+</body>
+</html>

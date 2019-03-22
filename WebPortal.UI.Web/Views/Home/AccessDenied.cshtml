@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "AccessDenied";
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+
+    var accessMessage = "";
+    if (ViewBag.AccessMessage != null && ViewBag.AccessMessage != "")
+    {
+        accessMessage = ViewBag.AccessMessage;
+    }
+
+}
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>@ViewBag.AccessMessage</h2>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/scripts/jquery-ui.min.js"></script>
+    <script src="~/scripts/jquery.tmpl.min.js"></script>
+    <script src="~/scripts/jquery.bootpag.min.js"></script>
+    <script src="~/scripts/Common.js"></script>
+
+}

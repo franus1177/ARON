@@ -1,0 +1,539 @@
+﻿@using WebPortal.Business.Entities.Utility;
+@using WebPortal.Business.Entities.ViewModels;
+@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    var CustomerBaseCssFile = WebConfigurationManager.AppSettings["CustomerBaseCssFile"].ToString();
+    List<MenuScreen_VM> objMenuList = null; List<ScreenAction_VM> objActionList = null;
+    var globalScreenAuth = (dynamic)null; var globalScreenActionAuth = (dynamic)null;
+    try
+    {
+        if (HttpContext.Current.Cache["objMenu" + ViewBag.UserRoleID] != null)
+        {
+            objMenuList = (List<MenuScreen_VM>)HttpContext.Current.Cache["objMenu" + ViewBag.UserRoleID];
+            globalScreenAuth = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(objMenuList);
+
+            if (HttpContext.Current.Cache["objAction" + ViewBag.UserRoleID] != null)
+            {
+                objActionList = (List<ScreenAction_VM>)HttpContext.Current.Cache["objAction" + ViewBag.UserRoleID];
+                globalScreenActionAuth = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(objActionList);
+            }
+        }
+        else
+        {
+            Response.Redirect("~/Login/");
+        }
+    }
+    catch (Exception ex)
+    {
+        Response.Redirect("~/Login/");
+    }
+}
+<link href="~/@CustomerBaseCssFile" rel="stylesheet" media="all" />
+<ul class="nav nav-list">
+    @{
+        foreach (var item in objMenuList/*.Where(x => x.HasSelect == true)*/)
+        {
+            switch (@item.ObjectName)
+            {
+                case "Dashboard":
+                    {
+                        <li>
+                            <input id="hf_GlobalDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                            <a title="@Resource.BSMenuDashboard" id="Search_@item.ScreenID" href="~/Home/Index/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-tachometer"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.Dashboard"> @Resource.Dashboard </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Safety Dashboard":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalSafetyDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Dashboard Drill":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalDrillDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Dashboard Incident":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalIncidentDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Dashboard Training":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalTrainingDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Dashboard FRAS":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalFRASDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Dashboard Work":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalWorkDashboardScreenID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "ObjectInstance":/*use to Travel*/
+                    {
+                        <input id="hf_GlobalObjectInstanceID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "User Role Document":
+                    {
+                        <input id="hf_GlobalUserRoleDocumentID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "User Location":
+                    {
+                        <input id="hf_GlobalUserLocationID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Access permission":
+                    {
+                        <input id="hf_GlobalUserRoleAccesspermisssionID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Location":
+                    {
+                        <li>
+                            <a title="@Resource.BSMenuLocation" id="Search_@item.ScreenID" href="~/Location/List/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-map-marker"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.AdminLocation">@Resource.AdminLocation </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Customer":
+                    {
+                        <li>
+                            <input id="hf_GlobalCustomerID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                            <a title="@Resource.BSMenuCustomer" id="Search_@item.ScreenID" href="~/Customer/Customer/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-users"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.Customer"> @Resource.Customer </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li>
+                            <a id="Search_@item.ScreenID" href="~/client/List/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-users"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="client">Client</span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        break;
+                    }
+                case "Invoice":
+                    {
+                        <li>
+                            <input id="hf_GlobalCustomerID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                            <a id="Search_@item.ScreenID" href="~/Invoice/index/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-users"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="Invoice"> Invoice</span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        break;
+                    }
+                case "Fixture Part":
+                    {
+                        <li>
+                            <a title="@Resource.FixturePart" id="Search_@item.ScreenID" href="~/FixturePart/index/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.FixturePart">@Resource.FixturePart </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Fixture Purchase Order":
+                    {
+                        <li>
+                            <a title="@Resource.PO" id="Search_@item.ScreenID" href="~/PurchaseOrder/index/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.PO">@Resource.PO </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Fixture":
+                    {
+                        <li>
+                            <a title="@Resource.Fixture" id="Search_@item.ScreenID" href="~/Fixture/index/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.Fixture">@Resource.Fixture </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Part":
+                    {
+                        <li>
+                            <a title="@Resource.Part" id="Search_@item.ScreenID" href="~/Part/index/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.Part">@Resource.Part </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Customer Location":
+                    {
+                        <li>
+                            <input id="hf_GlobalCustomerLocationID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                            <a title="@Resource.BSMenuLocation" id="Search_@item.ScreenID" href="~/Customer/Location?GlobalID=@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-map-marker"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.CustomerLocation"> @Resource.CustomerLocation </span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Customer Dashboard":
+                    {
+                        <input id="hf_GlobalCustomerDashboardID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                        break;
+                    }
+                case "Controller Tagging":
+                    {
+                        <li style="display:none">
+                            <input id="hf_GlobalControllerTaggingID" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                            <a title="@Resource.SFMENUControllerTagging" id="Search_@item.ScreenID" href="~/Safety/ControllerTagging/List/@item.EncryptScreenID">
+                                <i class="menu-icon fa fa-pencil-square-o"></i>
+                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.ControllerTagging">@Resource.ControllerTagging</span>
+                            </a>
+                            <b class="arrow"></b>
+                        </li> break;
+                    }
+                case "Document Settings":
+                    {
+                        <li>
+                            <a title="@Resource.MenuDocumentSetting" href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-file"></i>
+                                <span class="menu-text">
+                                    @Resource.Document
+                                </span>
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+                            <b class="arrow"></b>
+                            <ul class="submenu">
+                                @{var getDocumentChild = (from i in objMenuList select new { i.ObjectName, i.MenuCode, i.EncryptScreenID, i.ScreenID }).Where(x => x.MenuCode == "DocSettings"); }
+                                @foreach (var j in getDocumentChild)
+                                {
+                                    switch (j.ObjectName)
+                                    {
+                                        case "Document Category":
+                                            {
+                                                <li>
+                                                    <a title="@Resource.BSMenuDocumentCategory" id="Search_@j.ScreenID" href="~/DocumentCategory/List/@j.EncryptScreenID">
+                                                        <i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.DocumentCategory">@Resource.DocumentCategory </span>
+                                                    </a>
+                                                    <b class="arrow"></b>
+                                                </li> break;
+                                            }
+                                        case "Document":
+                                            {
+                                                <li>
+                                                    <a title="@Resource.BSMenuDocument" id="Search_@j.ScreenID" href="~/Document/List/@j.EncryptScreenID">
+                                                        <i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.Document">@Resource.Document </span>
+                                                    </a>
+                                                    <b class="arrow"></b>
+                                                </li>break;
+                                            }
+                                        default: break;
+                                    }
+                                }
+                            </ul>
+                        </li> break;
+                    }
+
+                                    case "User Settings":
+                                        {
+                                            <li>
+                                                <a title="@Resource.MenuUserSetting" href="#" class="dropdown-toggle">
+                                                    <i class="menu-icon fa fa-wrench"></i>
+                                                    <span class="menu-text">
+                                                        @Resource.UserSetting
+                                                    </span>
+                                                    <b class="arrow fa fa-angle-down"></b>
+                                                </a>
+                                                <b class="arrow"></b>
+                                                <ul class="submenu">
+                                                    @{var getUserSettingsChild = (from i in objMenuList select new { i.ObjectName, i.MenuCode, i.EncryptScreenID, i.ScreenID }).Where(x => x.MenuCode == "UserSetting"); }
+                                                    @foreach (var j in getUserSettingsChild)
+                                                    {
+                                                        switch (j.ObjectName)
+                                                        {
+                                                            case "User Role":
+                                                                {
+                                                                    <li>
+                                                                        <a title="@Resource.BSMenuUserRole" id="Search_@j.ScreenID" href="~/UserRole/Index/@j.EncryptScreenID">
+                                                                            <i class="menu-icon fa fa-caret-right"></i>
+                                                                            <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.UserRole">@Resource.UserRole </span>
+                                                                        </a>
+                                                                        <b class="arrow"></b>
+                                                                    </li> break;
+                                                                }
+                                                            case "User":
+                                                                {
+                                                                    <li>
+                                                                        <a title="@Resource.BSMenuUser" id="Search_@j.ScreenID" href="~/User/Index/@j.EncryptScreenID">
+                                                                            <i class="menu-icon fa fa-caret-right"></i>
+                                                                            <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.User">@Resource.User </span>
+                                                                        </a>
+                                                                        <b class="arrow"></b>
+                                                                    </li> break;
+                                                                }
+
+                                                            case "Controller":
+                                                                {
+                                                                    <li>
+                                                                        <a title="@Resource.BSMenuController" id="Search_@j.ScreenID" href="~/ControllerSpecialization/Index/@j.EncryptScreenID">
+
+                                                                            <i class="menu-icon fa fa-caret-right"></i>
+                                                                            <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.Controller">@Resource.Controller</span>
+                                                                        </a>
+                                                                        <b class="arrow"></b>
+                                                                    </li>break;
+                                                                }
+                                                            default: break;
+                                                        }
+                                                    }
+                                                </ul>
+                                            </li> break;
+                                                            }
+                                                        case "ImportData":
+                                                            {
+                                                                <li>
+                                                                    <a title="@Resource.BSMenuImportData" id="Search_@item.ScreenID" href="~/ImportData/List/@item.EncryptScreenID">
+                                                                        <i class="menu-icon fa fa-upload"></i>
+                                                                        <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.ImportData">@Resource.ImportData </span>
+                                                                    </a>
+                                                                    <b class="arrow"></b>
+                                                                </li> break;
+                                                            }
+                                                        case "Audit Log":
+                                                            {
+                                                                <li>
+                                                                    <input id="hf_GlobalAuditLog" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                                                                    <a title="@Resource.BSMenuAuditLog" id="Search_@item.ScreenID" href="~/AuditLog/Index/@item.EncryptScreenID">
+                                                                        <i class="menu-icon fa fa-pencil-square-o"></i>
+                                                                        <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.AuditLogReport">@Resource.AuditLogReport</span>
+                                                                    </a>
+                                                                    <b class="arrow"></b>
+                                                                </li> break;
+                                                            }
+                                                        case "BasicSettings":
+                                                            {
+                                                                <li>
+                                                                    <a title="@Resource.MenuBasicSetting" href="#" class="dropdown-toggle">
+                                                                        <i class="menu-icon fa fa-wrench"></i>
+                                                                        <span class="menu-text">@Resource.BasicSetting</span>
+                                                                        <b class="arrow fa fa-angle-down"></b>
+                                                                    </a>
+                                                                    <b class="arrow"></b>
+                                                                    <ul class="submenu">
+                                                                        @{var getMastersChild = (from i in objMenuList select new { i.ObjectName, i.MenuCode, i.EncryptScreenID, i.ScreenID }).Where(x => x.MenuCode == "BasicSettings"); }
+                                                                        @foreach (var j in getMastersChild)
+                                                                        {
+                                                                            switch (j.ObjectName)
+                                                                            {
+
+                                                                                case "UOM":
+                                                                                    {
+                                                                                        <li>
+                                                                                            <a title="@Resource.BSMenuUOM" id="Search_@j.ScreenID" href="~/UOM/UOM/@j.EncryptScreenID">
+                                                                                                <i class="menu-icon fa fa-caret-right"></i>
+                                                                                                <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.UOM">@Resource.UOM </span>
+                                                                                            </a>
+                                                                                            <b class="arrow"></b>
+                                                                                        </li> break;
+                                                                                    }
+                                                                                case "Holiday Calendar":
+                                                                                    {
+                                                                                        <li>
+                                                                                            <a title="@Resource.BSMenuHolidayCalendar" id="Search_@j.ScreenID" href="~/CountryHoliday/List/@j.EncryptScreenID">
+                                                                                                <i class="menu-icon fa fa-calendar"></i>
+                                                                                                <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.HolidayCalendar">@Resource.HolidayCalendar </span>
+                                                                                            </a>
+                                                                                            <b class="arrow"></b>
+                                                                                        </li> break;
+                                                                                    }
+                                                                                case "ChecklistTaskGroup":
+                                                                                    {
+                                                                                        <li>
+                                                                                            <a title="@Resource.BSMenuChecklistTaskGroup" id="Search_@j.ScreenID" href="~/ChecklistTaskGroup/List/@j.EncryptScreenID">
+                                                                                                <i class="menu-icon"></i>
+                                                                                                <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.ChecklistTaskGroup">@Resource.ChecklistTaskGroup </span>
+                                                                                            </a>
+                                                                                            <b class="arrow"></b>
+                                                                                        </li>
+                                                                                        break;
+                                                                                    }
+                                                                                default: break;
+                                                                            }
+                                                                        }
+                                                                    </ul>
+                                                                </li> break;
+                                                                                }
+                                                                            case "HR Settings":
+                                                                                {
+                                                                                    <li>
+                                                                                        <a title="@Resource.MenuHRSetting" href="#" class="dropdown-toggle">
+                                                                                            <i class="menu-icon fa fa-wrench"></i>
+                                                                                            <span class="menu-text">
+                                                                                                @Resource.HRSettings
+                                                                                            </span>
+                                                                                            <b class="arrow fa fa-angle-down"></b>
+                                                                                        </a>
+                                                                                        <b class="arrow"></b>
+                                                                                        <ul class="submenu">
+                                                                                            @{var getHRSettingsChild = (from i in objMenuList select new { i.ObjectName, i.MenuCode, i.EncryptScreenID, i.ScreenID }).Where(x => x.MenuCode == "HRSettings"); }
+                                                                                            @foreach (var j in getHRSettingsChild)
+                                                                                            {
+                                                                                                switch (j.ObjectName)
+                                                                                                {
+                                                                                                    case "Employee":
+                                                                                                        {
+                                                                                                            <li>
+                                                                                                                <a title="@Resource.BSMenuEmployee" id="Search_@j.ScreenID" href="~/Employee/Index/@j.EncryptScreenID">
+                                                                                                                    <i class="menu-icon fa fa-caret-right"></i>
+                                                                                                                    <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.Employee">@Resource.Employee </span>
+                                                                                                                </a>
+                                                                                                                <b class="arrow"></b>
+                                                                                                            </li> break;
+                                                                                                        }
+                                                                                                    case "Designation":
+                                                                                                        {
+                                                                                                            <li>
+                                                                                                                <a title="@Resource.BSMenuDesignation" id="Search_@j.ScreenID" href="~/Designation/Index/@j.EncryptScreenID">
+                                                                                                                    <i class="menu-icon fa fa-caret-right"></i>
+                                                                                                                    <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.Designation">@Resource.Designation </span>
+                                                                                                                </a>
+                                                                                                                <b class="arrow"></b>
+                                                                                                            </li> break;
+                                                                                                        }
+                                                                                                    case "Department":
+                                                                                                        {
+                                                                                                            <li>
+                                                                                                                <a title="@Resource.BSMenuDepartment" id="Search_@j.ScreenID" href="~/Department/Index/@j.EncryptScreenID">
+                                                                                                                    <i class="menu-icon fa fa-calendar"></i>
+                                                                                                                    <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.Department">@Resource.Department </span>
+                                                                                                                </a>
+                                                                                                                <b class="arrow"></b>
+                                                                                                            </li> break;
+                                                                                                        }
+                                                                                                    case "Working Shift":
+                                                                                                        {
+                                                                                                            <li>
+                                                                                                                <a title="@Resource.BSMenuWorkingShift" id="Search_@j.ScreenID" href="~/Shift/Index/@j.EncryptScreenID">
+                                                                                                                    <i class="menu-icon fa fa-caret-right"></i>
+                                                                                                                    <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.WorkingShift">@Resource.WorkingShift </span>
+                                                                                                                </a>
+                                                                                                                <b class="arrow"></b>
+                                                                                                            </li> break;
+                                                                                                        }
+
+                                                                                                    case "Squad":
+                                                                                                        {
+                                                                                                            <li>
+                                                                                                                <a title="@Resource.BSMenuSquad" id="Search_@j.ScreenID" href="~/Squad/Index/@j.EncryptScreenID">
+                                                                                                                    <i class="menu-icon fa fa-caret-right"></i>
+                                                                                                                    <span class="menu-text MyScreen" data-id="@j.ScreenID" data-label="@Resource.Squad">@Resource.Squad</span>
+                                                                                                                </a>
+                                                                                                                <b class="arrow"></b>
+                                                                                                            </li>break;
+                                                                                                        }
+
+                                                                                                    default: break;
+                                                                                                }
+                                                                                            }
+                                                                                        </ul>
+                                                                                    </li> break;
+                                                                                                    }
+                                                                                                case "KPI":
+                                                                                                    {
+                                                                                                        <li>
+                                                                                                            <input id="hf_GlobalKPI" type="hidden" data-id="@item.ScreenID" value="@item.EncryptScreenID" />
+                                                                                                            <a title="@Resource.BSMenuImportData" id="Search_@item.ScreenID" href="~/KPI/Index/@item.EncryptScreenID">
+                                                                                                                <i class="menu-icon fa fa-pencil-square-o"></i>
+                                                                                                                <span class="menu-text MyScreen" data-id="@item.ScreenID" data-label="@Resource.KPI">@Resource.KPI</span>
+                                                                                                            </a>
+                                                                                                            <b class="arrow"></b>
+                                                                                                        </li> break;
+                                                                                                            }
+                                                                                                    }
+                                                                                                }
+    }
+</ul><!-- /.nav-list -->
+
+<div id="sidebar-collapse" class="sidebar-toggle sidebar-collapse">
+    <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+</div>
+
+<script type="text/javascript">
+    var userScreenInfo = null, userScreenActionInfo = null;
+
+    $(document).ready(function () {
+        userScreenInfo = '@Html.Raw(globalScreenAuth)';/*used in common js*/
+        userScreenActionInfo = '@Html.Raw(globalScreenActionAuth)';/*used in common js*/
+
+        SetScreenInfo(userScreenInfo);
+        ScreenActionInfo(userScreenActionInfo);
+
+        $("#dashboardLogo").attr("href", "/Home/Index/" + globalScreenID.DashboardScreenID);
+        $("#HomebreadcrumbURL").attr("href", $("#dashboardLogo").attr("href"));
+        $("#HomeErrorURL").attr("href", $("#dashboardLogo").attr("href"));
+
+        /*Screen search*/
+        MenuScreenSearch();
+    });
+
+    var globalScreenID = {
+        CheckListTaskScreenID: $("#hf_GlobalCheckListTaskID").val(),
+        TaskScreenID: $("#hf_GlobalTaskID").val(),
+        CheckListScreenID: $("#hf_GlobalCheckListID").val(),
+        ObjectScreenID: $("#hf_GlobalObjectID").val(),
+        DeviationTypeScreenID: $("#hf_GlobalDeviationTypeID").val(),
+        DeviationTypeResolutionScreenID: $("#hf_GlobalDeviationTypeResolutionID").val(),
+        CustomerScreenID: $("#hf_GlobalCustomerID").val(),
+        ObjectInstanceScreenID: $("#hf_GlobalObjectInstanceID").val(),
+        CustomerLocationScreenID: $("#hf_GlobalCustomerLocationID").val(),/*"Customer Location"*/
+
+        InspectionScreenID: $("#hf_GlobalInspectionID").val(),
+
+        DashboardScreenID: $("#hf_GlobalDashboardScreenID").val(),
+        SafetyDashboardScreenID: $("#hf_GlobalSafetyDashboardScreenID").val(),
+        DrillDashboardScreenID: $("#hf_GlobalDrillDashboardScreenID").val(),
+        IncidentDashboardScreenID: $("#hf_GlobalIncidentDashboardScreenID").val(),
+        TrainingDashboardScreenID: $("#hf_GlobalTrainingDashboardScreenID").val(),
+        FRASDashboardScreenID: $("#hf_GlobalFRASDashboardScreenID").val(),
+        WorkDashboardScreenID: $("#hf_GlobalWorkDashboardScreenID").val(),
+
+        ControllerTaggingScreenID: $("#hf_GlobalControllerTaggingID").val(),
+        DrillDashboardScreenID: $("#hf_GlobalDrillDashboardScreenID").val(),
+        UserRoleDocumentID: $("#hf_GlobalUserRoleDocumentID").val(),
+        UserRoleAccesspermisssionID: $("#hf_GlobalUserRoleAccesspermisssionID").val(),
+        UserLocationID: $("#hf_GlobalUserLocationID").val(),
+        CustomerDashboardID: $("#hf_GlobalCustomerDashboardID").val()
+    };
+
+    var globalDeryptedScreenID = {
+        CheckListTaskScreenID: $("#hf_GlobalCheckListTaskID").attr("data-id"),
+        TaskScreenID: $("#hf_GlobalTaskID").attr("data-id"),
+        ObjectScreenID: $("#hf_GlobalObjectID").attr("data-id"),
+        DeviationTypeScreenID: $("#hf_GlobalDeviationTypeID").attr("data-id"),
+        DeviationTypeResolutionScreenID: $("#hf_GlobalDeviationTypeResolutionID").attr("data-id"),
+        CustomerScreenID: $("#hf_GlobalCustomerID").attr("data-id"),
+        ObjectInstanceScreenID: $("#hf_GlobalObjectInstanceID").attr("data-id"),
+        CustomerLocationScreenID: $("#hf_GlobalCustomerLocationID").attr("data-id"),
+        UserRoleDocumentID: $("#hf_GlobalUserRoleDocumentID").attr("data-id"),
+        UserRoleAccesspermisssionID: $("#hf_GlobalUserRoleAccesspermisssionID").attr("data-id"),
+        UserLocationID: $("#hf_GlobalUserLocationID").attr("data-id"),
+        CustomerDashboardID: $("#hf_GlobalCustomerDashboardID").attr("data-id"),
+    };
+
+    SetActiveModule('@ModuleCode.Base');
+</script>

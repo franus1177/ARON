@@ -1,0 +1,244 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    ViewBag.Title = Resource.Home;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+}
+
+<link href="~/assets/css/AdminLTE.min.css?@jq" rel="stylesheet" />
+
+<!--CHART-->
+<script src="~/assets/js/Chart.bundle.js?@jq"></script>
+<script src="~/assets/js/utils.js?@jq"></script>
+
+<!--Funnel-->
+<script src="~/assets/js/funnel/amcharts.js?@jq"></script>
+<script src="~/assets/js/funnel/funnel.js?@jq"></script>
+
+<link href="~/Assets/css/export.css?@jq" rel="stylesheet" />
+<script src="~/assets/js/funnel/light.js?@jq"></script>
+
+<!--Speedometer-->
+<script src="~/assets/DashboardJS/echarts-all.js?@jq"></script>
+<script src="~/assets/DashboardJS/green.js?@jq"></script>
+
+<!-- Chart code -->
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 250px;
+    }
+
+    .amcharts-export-menu li:last-child > a {
+        border-bottom: none;
+        display: none;
+    }
+
+    #chartdiv div.amcharts-chart-div a {
+        display: none !important;
+    }
+</style>
+<style>
+    .infobox-small {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+
+        .infobox-small > .infobox-data {
+            max-width: 150px;
+            text-align: center;
+        }
+
+    .infobox-green.infobox-dark {
+        background-color: #e6693e;
+        border-color: #9ABC32;
+    }
+
+    .infobox-blue.infobox-dark {
+        background-color: #82af6f;
+        border-color: #6FB3E0;
+    }
+
+    .footer .footer-inner .footer-content {
+        border-top: none;
+    }
+</style>
+<style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .breadcrumbs .nav-search {
+        top: 0px;
+    }
+
+    .nav-search {
+        right: 9px;
+    }
+</style>
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <!-- breadcrumbs-fixed -->
+    @*<ul class="breadcrumb">
+            <li class="active">
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+            </li>
+
+        </ul>*@
+    <div class="col-xs-5 col-sm-5">
+        <ul class="breadcrumb">
+            <li class="active">
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-xs-1 col-sm-1" style="margin-top: -10px;width: 78px;">
+        <div class="radio ">
+            <label>
+                <input name="Duration" type="radio" class="ace" id="OneMonthDuration" checked="checked" value="1" onchange="BaseDashboard.OnMonthchange();">
+                <span class="lbl"> @Resource.M1 </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="col-xs-1 col-sm-1" style="margin-top: -10px;width: 78px;">
+        <div class="radio ">
+            <label>
+                <input name="Duration" type="radio" class="ace" id="threeMonthDuration" value="3" onchange="BaseDashboard.OnMonthchange();">
+                <span class="lbl"> @Resource.M3 </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="col-xs-1 col-sm-1" style="margin-top: -10px;width: 77px;">
+        <div class="radio">
+            <label>
+                <input name="Duration" type="radio" class="ace" id="sixMonthDuration" value="6" onchange="BaseDashboard.OnMonthchange();">
+                <span class="lbl"> @Resource.M6 </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="col-xs-1 col-sm-1" style="margin-top: -10px;width: 73px;">
+        <div class="radio">
+            <label>
+                <input name="Duration" type="radio" class="ace" id="oneYearDuration" value="12" onchange="BaseDashboard.OnMonthchange();">
+                <span class="lbl"> @Resource.Y1 </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="nav-search col-xs-4 col-sm-4">
+        <input type="text" style="width:337px;" placeholder="@Resource.Customer" class="nav-search-input" id="txtCustomerSearch" autocomplete="off">
+        &nbsp;&nbsp; <i title="@Resource.UserLocation" onclick="BaseDashboard.RefreshUserLeafLocation();" class="fa fa-refresh" style="cursor:pointer;    float: right;
+    line-height: 3.45;"></i>
+    </div>
+
+</div>
+
+<div class="page-content">
+    @*<div class="ace-settings-container" id="ace-settings-container">
+            <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                <i class="ace-icon fa fa-cog bigger-130"></i>
+            </div>
+
+            <div class="ace-settings-box clearfix" id="ace-settings-box">
+                <div class="pull-left width-50">
+                    <div class="ace-settings-item">
+                        <div class="pull-left">
+                            <select id="skin-colorpicker" class="hide">
+                                <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                            </select><div class="dropdown dropdown-colorpicker">		<a data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span class="btn-colorpicker" style="background-color: rgb(198, 72, 126);"></span></a><ul class="dropdown-menu dropdown-caret"><li><a class="colorpick-btn" style="background-color:#438EB9;" data-color="#438EB9"></a></li><li><a class="colorpick-btn" style="background-color:#222A2D;" data-color="#222A2D"></a></li><li><a class="colorpick-btn selected" style="background-color:#C6487E;" data-color="#C6487E"></a></li><li><a class="colorpick-btn" style="background-color:#D0D0D0;" data-color="#D0D0D0"></a></li></ul></div>
+                        </div>
+                        <span>&nbsp; Choose Skin</span>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off">
+                        <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off">
+                        <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off">
+                        <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off">
+                        <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off">
+                        <label class="lbl" for="ace-settings-add-container">
+                            Inside
+                            <b>.container</b>
+                        </label>
+                    </div>
+                </div><!-- /.pull-left -->
+
+                <div class="pull-left width-50">
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off">
+                        <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off">
+                        <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                    </div>
+
+                    <div class="ace-settings-item">
+                        <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off">
+                        <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                    </div>
+                </div><!-- /.pull-left -->
+            </div><!-- /.ace-settings-box -->
+        </div>*@
+    <div class="row hide">
+        <div class="col-xs-12 col-md-12" id="divCustomer">
+            @Html.Partial("_PartialCustomerList")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divMonthlySnapshot">
+            @Html.Partial("_partialMonthlySnapshot")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divYearlySnapshot">
+            @Html.Partial("_partialYearlySnapshot")
+        </div>
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+@section Scripts{
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        var scrnID = @ViewBag.screenID;
+        var _CustomerID = null;
+
+        var _DashboardFromDateCustom = ('@DateTime.UtcNow.ToString("dd-MMM-yyyy")');
+        var _DashboardToDateCustom =  ('@DateTime.UtcNow.ToString("dd-MMM-yyyy")');
+        var UserLoginInfo= "@ViewBag.UserLoginInfo";
+    </script>
+
+    @*<script src="~/Scripts/BaseDashboard.js?@jq"></script>
+    <script src="~/Scripts/BaseDashboardCustomerList.js?@jq"></script>
+    <script src="~/Scripts/BaseDashboardMonthlySnapshot.js?@jq"></script>
+    <script src="~/Scripts/BaseDashboardYearlySnapshot.js?@jq"></script>*@
+
+    <script src="~/Assets/DashboardJS/chartjs-plugin-datalabels.js?@jq"></script>
+}

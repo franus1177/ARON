@@ -1,0 +1,177 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    ViewBag.Title = @Resource.Dashboard;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+}
+
+<link href="~/assets/css/AdminLTE.min.css?@jq" rel="stylesheet" />
+@*CHART.JS*@
+
+<script src="~/assets/js/Chart.bundle.js?@jq"></script>
+<script src="~/assets/js/utils.js?@jq"></script>
+
+@*Funnel.js*@
+<script src="~/assets/js/funnel/amcharts.js?@jq"></script>
+<script src="~/assets/js/funnel/funnel.js?@jq"></script>
+<link href="~/assets/css/export.css?@jq" rel="stylesheet" />
+@*<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />*@
+<script src="~/assets/js/funnel/light.js?@jq"></script>
+
+@*Speedometer*@
+<script src="~/assets/DashboardJS/echarts-all.js?@jq"></script>
+<script src="~/assets/DashboardJS/green.js?@jq"></script>
+<link href="~/assets/css/components.css?@jq" rel="stylesheet" />
+@*<link rel="stylesheet" href="http://themes.djavaui.com/blankon-fullpack-admin-theme/assets/admin/css/components.css" type="text/css" media="all" />*@
+
+<!-- Chart code -->
+
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 250px;
+    }
+
+    .amcharts-export-menu li:last-child > a {
+        border-bottom: none;
+        display: none;
+    }
+
+    #chartdiv div.amcharts-chart-div a {
+        display: none !important;
+    }
+</style>
+
+<style>
+    .infobox-small {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+
+        .infobox-small > .infobox-data {
+            max-width: 150px;
+            text-align: center;
+        }
+
+    .infobox-green.infobox-dark {
+        background-color: #e6693e;
+        border-color: #9ABC32;
+    }
+
+    .infobox-blue.infobox-dark {
+        background-color: #82af6f;
+        border-color: #6FB3E0;
+    }
+
+    .footer .footer-inner .footer-content {
+        border-top: none;
+    }
+
+    .input-icon > .ace-icon {
+        top: 0px;
+    }
+
+    .input-icon > input {
+        padding-left: 33px;
+    }
+</style>
+
+<style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .infobox {
+        width: 175px;
+    }
+
+        .infobox > .infobox-data {
+            min-width: 110px;
+        }
+
+    .mini-stat {
+        padding: 5px;
+    }
+</style>
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <!-- breadcrumbs-fixed -->
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+        </li>
+        <li class="active"><a href="/Customer/Customer/@ViewBag.EncryptScreenID" class="active">@Resource.Customer</a> </li>
+        <li class="active"><a href="/Customer/Dashboard?CustomerID=@ViewBag.customerID&GlobalID=@ViewBag.GlobalID" class="active">@Resource.Dashboard</a> </li>
+    </ul><!-- /.breadcrumb -->
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12 col-md-6" id="divCustomerDetails">
+            @Html.Partial("_partialCustomerDetails")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divControllerList">
+            @Html.Partial("_partialControllerList")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6" id="divPlansAndAssets">
+            @Html.Partial("~/Areas/Safety/Views/SafetyDashboard/_partialPlansAndAssets.cshtml")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divActiveAssetsPlanners">
+            @Html.Partial("~/Areas/Safety/Views/SafetyDashboard/_partialActiveAssetsPlannersAndDeviations.cshtml")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divYearlySnapshot">
+            @Html.Partial("~/Areas/Safety/Views/SafetyDashboard/_partialYearlySnapshot.cshtml")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divMonthlySnapshot">
+            @Html.Partial("~/Areas/Safety/Views/SafetyDashboard/_partialMonthlySnapshot.cshtml")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divDeviations">
+            @Html.Partial("~/Areas/Safety/Views/SafetyDashboard/_partialDeviations.cshtml")
+        </div>
+        <div class="col-xs-12 col-md-6 hide" id="divLocationWiseCount">
+            @Html.Partial("_partialLocationWiseCount")
+        </div>
+        <div class="col-xs-12 col-md-6" id="divTop5Deviations">
+            @Html.Partial("~/Areas/Safety/Views/SafetyDashboard/_partialTop5Deviations.cshtml")
+        </div>
+        <div class="col-xs-12 col-md-6 hide" id="divEmergencyInspection">
+            <div class="box box-danger">
+                <div class="box-body chart-responsive">
+                    <b>@Resource.EmergencyInspection</b>
+                    <div style="width:100%">
+                        <canvas id="lineareaEmergencyInspection"></canvas>
+                    </div>
+                </div><!-- /.col -->
+            </div><!-- /.col -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.page-content -->
+
+@section Scripts{
+    @* <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+        var scrnID = @ViewBag.screenID;
+        var _CustomerID = @ViewBag.customerID;
+    </script>
+    <script src="~/Scripts/CustomerDashboardCustomerDetails.js?@jq"></script>
+    <script src="~/Areas/Safety/Scripts/CustomerDashboard.js??@jq"></script>
+    <script src="~/Areas/Safety/Scripts/SafetyDashboardMonthlySnapshot.js?@jq"></script>
+    <script src="~/Areas/Safety/Scripts/SafetyDashboardYearlySnapshot.js?@jq"></script>
+    <script src="~/Areas/Safety/Scripts/SafetyDashboardDeviations.js?@jq"></script>
+    <script src="~/Areas/Safety/Scripts/SafetyDashboardTop5Deviations.js?@jq"></script>
+    <script src="~/Areas/Safety/Scripts/SafetyDashboardPlansAndAssets.js?@jq"></script>
+    <script src="~/Areas/Safety/Scripts/SafetyDashboardActiveAssetsPlannersAndDeviations.js?@jq"></script>
+}
+
+
+
+

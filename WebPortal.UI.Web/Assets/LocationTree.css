@@ -1,0 +1,11 @@
+﻿.hideShow {opacity: .5;cursor: not-allowed !important;}
+.locationTreeViewPopup ul, .locationTreeViewPopup li {list-style-type: none;}
+/*.locationTreeViewPopup li {list-style-type: none;}*/
+.loadingP {background-image: url('../../../assets/images/throbber.gif');width: 15px;display: inline-block;}
+.locationTreeViewPopup .collapse {background-image: url('../../../assets/images/ui-icons_454545_256x240.png');background-repeat: no-repeat;background-position: -36px -17px;display: inline-block;cursor: pointer;width: 15px;}
+.expand {background-image: url('../../../assets/images/ui-icons_454545_256x240.png');background-repeat: no-repeat;background-position: -50px -17px;display: inline-block;cursor: pointer;width: 15px;}
+.collapse {background-image: url(/../../assets/images/ui-icons_454545_256x240.png);background-repeat: no-repeat;background-position: -36px -17px;display: inline-block;cursor: pointer;width: 15px;}
+.treeview ul {font: 14px Arial, Sans-Serif;margin:0px;padding-left:20px;list-style: none;}
+.treeview > li > a {font-weight: bold;}
+.treeview li a {padding: 4px;font-size: 13px;display: inline-block;text-decoration: none;width: auto;font-weight: 400;}
+.markselected {background-color: #c5d0dc !important;}

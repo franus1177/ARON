@@ -1,0 +1,146 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@using WebPortal.Business.Operations.Repository;
+@using WebPortal.Business.Entities.ViewModels;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    IEnumerable<SelectListItem> TimeZoneList = new DropDownRepository().GetTimeZone(new TimeZone_VM());
+}
+
+<link rel="stylesheet" href="~/assets/css/chosen.min.css?@jq" />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span></span>
+        <div class="pull-right" title="@Resource.Close"><i onclick="user.SetForClose();" style="cursor: pointer; margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>
+    </div>
+    <div class="panel-body">
+        <form id="frm_User" autocomplete="off">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.LoginName</label><asterisk></asterisk>
+                        <input type="text" id="txtUserName" class="form-control" maxlength="50" placeholder="@Resource.LoginName" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.FirstName</label><asterisk></asterisk>
+                        <input type="text" id="txtFirstName" class="form-control" maxlength="30" placeholder="@Resource.FirstName" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.MiddleName</label>
+                        <input type="text" id="txtMiddleName" class="form-control" maxlength="30" placeholder="@Resource.MiddleName" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.LastName</label><asterisk></asterisk>
+                        <input type="text" id="txtLastName" class="form-control" maxlength="30" placeholder="@Resource.LastName" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <div>
+                            <label class="control-label">@Resource.Gender</label><asterisk></asterisk>&nbsp;&nbsp;
+                            <label><input type="radio" name="gender" checked="checked" value="Male">&nbsp;&nbsp;@Resource.Male</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="gender" value="Female">&nbsp;&nbsp;@Resource.Female</label>
+                        </div>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Email</label><asterisk></asterisk>
+                        <input type="text" autocomplete="off" id="txtEmail" class="form-control" onchange="user.CheckEmail();" maxlength="100" placeholder="@Resource.Email" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div id="hidePass" class="col-md-6 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Password</label><asterisk></asterisk>
+                        <input type="password" id="txtPassword" class="form-control" maxlength="16" placeholder="@Resource.Password" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div id="hideConfPass" class="col-md-6 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.ConfirmPassword</label><asterisk></asterisk>
+                        <input type="password" id="txtConfirmPassword" onchange="user.CheckPassword();" class="form-control" maxlength="16" placeholder="@Resource.ConfirmPassword" autocomplete="off" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.UserRole</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlUserRole", new List<SelectListItem>(), Resource.Select, new { @class = "form-control" })
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Language</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlLanguage", new List<SelectListItem>(), Resource.Select, new { @class = "form-control" })
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xs-6" id="divDesignation">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Designation</label>
+                        <select id="ddlDesignation" class="form-control">
+                            <option selected="selected">Select</option>
+                        </select>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6" id="divDepartment">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Department</label>
+                        <select id="ddlDepartment" class="form-control">
+                            <option selected="selected">Select</option>
+                        </select>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.UTCOffset</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlUTCOffset", TimeZoneList, Resource.Select, new { @class = "form-control", @id = "ddlUTCOffset" })
+                       
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Module</label><asterisk></asterisk>
+                        <select multiple="" onchange="user.bindDefaultModule();" class="chosen-select form-control" id="ddlModule" data-placeholder="@Resource.Module"></select>
+                        <p id="lblErrorddlModule" class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.DefaultModule</label><asterisk></asterisk>
+                        <select class="form-control" id="ddlDefaultModule" placeholder="@Resource.DefaultModule"></select>
+                        <p id="lblErrorddlDefaultModule" class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <input type="hidden" id="hf_EndUserID" value="" />
+        <button type="button" id="btn_Save_Data" onclick="user.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" id="btn_Reset_Data" onclick="user.ResetData();" class="btn btn-warning btn-round"><i class="fa fa-history"></i>&nbsp;&nbsp;@Resource.Reset</button>
+        <button type="button" title="@Resource.Close" onclick="user.SetForClose();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Cancel</button>
+    </div>
+</div>
+
+<script src="~/assets/js/chosen.jquery.min.js?@jq"></script>

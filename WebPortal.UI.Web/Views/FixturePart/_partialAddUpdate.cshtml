@@ -1,0 +1,39 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using WebPortal.Business.Operations.InventoryRepository;
+@using WebPortal.Business.Entities.InventoryModels;
+@{
+            //IEnumerable<SelectListItem> PartList = new DropDownInventory().GetPart(new Part_VM());
+            IEnumerable<SelectListItem> FixtureList = new DropDownInventory().GetFixture(new Fixture_VM());
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span>@Resource.Fixture</span>
+        <div class="pull-right" title="@Resource.Close"><i onclick="FixturePart.SetForClose();" style="cursor:pointer;margin-top: -3px;" class="fa fa-window-close fa-2x"></i></div>
+    </div>
+    <div class="panel-body">
+        <form id="frm_FixturePartAddUpdate" action="#">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Fixture:</label><asterisk></asterisk>
+                        @Html.DropDownList("ddlFixture", FixtureList, Resource.Select, new { @class = "form-control", @id = "ddlFixture" })
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">@Resource.Quantity:</label>
+                        <input type="text" id="txtFixtureQuantity" class="form-control Amount text-right" maxlength="9" placeholder="@Resource.Cost" />
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <input type="hidden" id="hf_FixtureID" value="" />
+        <button type="button" onclick="FixturePart.AddUpdate();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;&nbsp;@Resource.Save</button>
+        <button type="button" onclick="FixturePart.ResetDataAddUpdate();" class="btn btn-warning btn-round"><i class="fa fa-history"></i></button>
+        <button type="button" title="@Resource.Close" onclick="FixturePart.SetForClose();" class="btn btn-round pull-right"><i class="fa fa-times"></i>&nbsp;&nbsp;@Resource.Close</button>
+    </div>
+</div>

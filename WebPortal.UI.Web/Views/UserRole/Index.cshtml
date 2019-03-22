@@ -1,0 +1,234 @@
+﻿@using WebPortal.UI.Web.GlobalResource;
+@using System.Web.Configuration;
+@{
+    var jq = WebConfigurationManager.AppSettings["jqueryVersionUpdate"].ToString();
+    ViewBag.Title = Resource.UserRole;
+    Layout = "~/Views/Shared/_Layout_BS.cshtml";
+}
+@using WebPortal.Common.Utilities.Helpers;
+
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a id="HomebreadcrumbURL" href="#">@Resource.Home</a>
+        </li>
+        <li><a href="#">@Resource.UserSetting</a></li>
+        <li class="active"><a href="/UserRole/Index/@ViewBag.EncryptScreenID" class="active">@Resource.UserRole</a></li>
+    </ul>
+    <div id="divActions" class="pull-right" style="padding-right: 12px;">
+        <span id="divExport" style="display:none;" class="dt-buttons btn-overlap btn-group">
+            <a id="btnExportToExcel" href="#" style="margin-right: 9px !important;color:#393939;" class="dt-button buttons-excel" tabindex="0" aria-controls="dynamic-table" onclick="ExportToExcelGrid('#tblGrid','excel');">
+                <i style="font-size: 20px !important;color: green;" class="fa fa-file-excel-o bigger-110" title="@Resource.ExportToExcel"></i> <span class="hidden">@Resource.ExportToExcel</span>
+            </a>
+        </span>&nbsp;&nbsp;
+        <span id="divAdd" class="pull-right" title="@Resource.Add"></span>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-6 col-xs-12" id="divGridUserRole">
+            <div id="dtRole_wrapper" class="form-inline dt-bootstrap no-footer">
+                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="tblGrid" role="grid">
+                    <template>
+                        User Role Details
+                    </template>
+                    <thead>
+                        <tr role="row">
+                            <th>@Resource.UserRole</th>
+                            <th style="width: 110px !important;" id="thDocumentMapping" class="HasPermissiontdDM">@Resource.DocumentMapping</th>
+                            <th style="width: 110px !important;" class="HasPermissiontds">@Resource.Permission</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <div id="Master_Form" class="col-md-6 col-xs-12" style="display:none"></div>
+        <div id="ScreenUserRoleAccess" class="col-lg-12 col-md-12 col-xl-12 col-sm-12" style="display:none;">
+            <form action="#" id="Screen_Form">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-check-square-o"></i>&nbsp;&nbsp;<span id="FormHeading">@Resource.UserRoleAccessPermission</span>
+                        <div class="pull-right" title="@Resource.Close"><i onclick="userRole.SetForUserRoleAccessClose();" style="cursor:pointer;margin-top: -3px;margin-right: -7px;" class="fa fa-window-close fa-2x"></i></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">@Resource.UserRole</label><asterisk></asterisk>
+                                    <select id="ddlUserRole" onchange="userRole.ClearAccessGrid();" class="form-control"></select>
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">@Resource.Module</label><asterisk></asterisk>
+                                    <select id="ddlAccessModule" onchange="userRole.ClearAccessGrid();" class="form-control"></select>
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label">@Resource.Menu</label><asterisk></asterisk>
+                                    @Html.DropDownList("ddlMenu", new List<SelectListItem>(), "Screens", new { @class = "form-control" })
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-lg-3 col-md-3">
+                                <br />
+                                <button id="btnUserRoleAccessProceed" onclick="userRole.RoleAccessProceed();" class="btn btn-success btn-round" type="button"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;@Resource.Proceed</button>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                            <div class="form-group">
+                                <table id="tblUserRoleScreenGrid" class="table table-striped table-bordered table-hover dataTable no-footer">
+                                    <thead>
+                                        <tr>
+                                            <td class="col-lg-2">@Resource.ScreenName</td>
+                                            <td class="col-lg-6">@Resource.BaseAction</td>
+                                            <td class="col-lg-4">@Resource.AdditionalScreenActions</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td colspan="3" align="center">@Resource.Norecordsavailable</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer" style="display:none;" id="panelFooter">
+                        <button type="button" id="btn_Save_UserRoleAccessLevelData" onclick="userRole.SaveUserRoleAccessLevelData();" class="btn btn-success btn-round"><i class="fa fa-save"></i>&nbsp;@Resource.Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div><!-- /.page-content -->
+<!-- page specific plugin scripts -->
+@section Scripts{
+    <script id="Grid_Data_Template_tblGrid" type="text/x-jquery-tmpl">
+        <tr  data-id="${UserRoleID}">
+            <td class="HasUpdatetds">
+                <a href="javascript:userRole.GetDataByID(xhr_getData_For_Edit, ${UserRoleID});"  style="cursor:pointer;" title="Edit">${UserRoleName}</a>
+            </td>
+            <td class="HasPermissiontdDM" style="text-align: center;">
+                {{if UserRoleID != 1}}
+                <a href="javascript:DocumentMapping.SetForDocumentMapping(xhr_SetForm_For_Permission, ${UserRoleID})" title="@Resource.DocumentMapping">
+                    <i class="fa fa-file" style="font-size: large;" aria-hidden="true"></i>
+                </a>
+                {{/if}}
+            </td>
+            <td class="HasPermissiontds" style="text-align: center;">
+                <a href="javascript:userRole.SetForPermission(xhr_SetForm_For_Permission, ${UserRoleID})" title="Permission">
+                    <i class="fa fa-lock" style="font-size: large;" aria-hidden="true"></i>
+                </a>
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/javascript">
+        var scrnID = @ViewBag.screenID;
+        var AddNewUserRole = "@Resource.Add";
+        var EditUserRole = "@Resource.Edit";
+         var UserRoleNamealreadyexists = "@Resource.UserRoleNamealreadyexists";
+    </script>
+
+    <script id="Grid_Data_Template" type="text/x-jquery-tmpl">
+        <tr  data-id="${ScreenID}">
+            <td>${MenuName}</td>
+            <td>${ScreenName}</td>
+        </tr>
+    </script>
+
+    <script id="Grid_Data_ScreenTemplate" type="text/x-jquery-tmpl">
+        <tr id="tr_${ScreenID}" data-id="${ScreenID}">
+            <td><span id="lblScreenName" class="control-label">${ScreenName}</span></td>
+            <td>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="control-label">@Resource.View</label><br />
+                            <label>
+                                <input id="BaseSelect_${ScreenID}" data-id="${ScreenID}" name="Base" ${HasSelectCustom} class="ace ace-switch ace-switch-6 typecheck" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="control-label">@Resource.Add</label><br />
+                            <label>
+                                <input id="BaseInsert_${ScreenID}" data-id="${ScreenID}" name="Base" ${HasInsertCustom} class="ace ace-switch ace-switch-6 typecheck" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="control-label">@Resource.Edit</label><br />
+                            <label>
+                                <input id="BaseUpdate_${ScreenID}" data-id="${ScreenID}" name="Base" ${HasUpdateCustom} class="ace ace-switch ace-switch-6 typecheck" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="control-label">@Resource.Delete</label><br />
+                            <label>
+                                <input id="BaseDelete_${ScreenID}" data-id="${ScreenID}" name="Base" ${HasDeleteCustom} class="ace ace-switch ace-switch-6 typecheck" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="control-label">@Resource.ImportData</label><br />
+                            <label>
+                                <input id="BasechkImport_${ScreenID}" data-id="${ScreenID}" name="Base" ${HasImportCustom} class="ace ace-switch ace-switch-6" type="checkbox" value="Import" />
+                                <span class="lbl"></span>
+                            </label>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="control-label">@Resource.ExportData</label><br />
+                            <label>
+                                <input id="BasechkExport_${ScreenID}" data-id="${ScreenID}" name="Base" ${HasExportCustom} class="ace ace-switch ace-switch-6" type="checkbox" value="Export" />
+                                <span class="lbl"></span>
+                            </label>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div id="ChildAdditionalScreenAction${ScreenID}"></div>
+            </td>
+        </tr>
+    </script>
+
+    <script id="Grid_Data_ScreenWiseTemplate" type="text/x-jquery-tmpl">
+        <div data-id="${ScreenID}" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="control-label">${ActionName}</label><br />
+                <label>
+                    <input id="${ActionCode}_${ScreenID}" data-id="${ScreenID}" name="Additional" class="ace ace-switch ace-switch-6 typecheck" type="checkbox" />
+                    <span class="lbl"></span>
+                </label>
+                <p class="help-block"></p>
+            </div>
+        </div>
+    </script>
+    <script src="~/Scripts/UserRole.js?@jq"></script>
+    <script src="~/Scripts/DocumentCategorySelect.js?@jq"></script>
+}
